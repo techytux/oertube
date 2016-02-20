@@ -1,10 +1,13 @@
-var teaserWidth  = 320;
-var teaserHeight = 160;
-var teaserMargin = 10;
+var teaserWidth  = 407;
+var teaserHeight = 229;
+var teaserMargin = 40;
 
-var scale = 3;
-var zielX = 100;
-var zielY = 100;
+var scale = 2.874692875;
+var zielX = 373;
+var zielY = 193;
+
+var baseOffsetX = zielX;
+var baseOffsetY = zielY;
 
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
@@ -14,7 +17,6 @@ function makeZoomable(rowClass) {
 			event.stopPropagation();
 			
 			if($("main").hasClass("zoom")) {
-				console.log("Voodoo");
 				$("main").removeClass("zoom");
 			} else {
 				var indexX = $(this).index();
@@ -27,11 +29,11 @@ function makeZoomable(rowClass) {
 }
 
 function getStartX(indexX) {
-	return indexX*(teaserWidth+teaserMargin);
+	return (indexX*(teaserWidth+teaserMargin)) + baseOffsetX;
 }
 
 function getStartY(indexY) {
-	return indexY*(teaserHeight+teaserMargin);
+	return (indexY*(teaserHeight+teaserMargin)) + baseOffsetY;
 }
 
 function getOffsetX(indexX) {

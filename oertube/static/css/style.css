@@ -4,6 +4,11 @@ body {
 
 .grid-cont {
     width: auto;
+    padding: 193px 0 0 373px;
+}
+
+.row-horizon {
+    overflow: hidden;
 }
 
 .popular-news {
@@ -14,9 +19,9 @@ body {
 
 .popular-news .items a {
     background-color: #aaaaaa;
-    width: 320px;
-    height: 160px;
-    margin: 10px 0 0 10px;
+    width: 407px;
+    height: 229px;
+    margin: 0 40px 40px 0;
 }
 
 main {
@@ -25,7 +30,7 @@ main {
 }
 
 main.zoom {
-    transform: scale(3.0);
+    transform: scale(2.874692875);
     transition: transform .5s ease;
 }
 
