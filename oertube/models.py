@@ -3,6 +3,9 @@ from datetime import datetime
 from oertube.core import db
 from oertube import app
 
+import pymongo
+import json
+import urllib
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,3 +29,11 @@ app.config['API_MODELS'] = {'post': Post}
 # models for which we want to create CRUD-style URL endpoints,
 # and pass the routing onto our AngularJS application
 app.config['CRUD_URL_MODELS'] = {'post': Post}
+
+
+def get_lists_json():
+    print "Here we are!"
+    lists_text = urllib.urlopen("http://editorial.mixd.tv/puls-highlights").read()
+    lists_json = json.loads(lists_text)
+
+    return lists_json
