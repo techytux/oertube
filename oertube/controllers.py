@@ -43,6 +43,10 @@ def rest_pages(model_name, item_id=None):
                 'oertube/templates/index.html').read())
     abort(404)
 
+@app.route('/lists')
+def lists(item_id=None):
+    return redirect("http://editorial.mixd.tv/puls-highlights")
+
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')
