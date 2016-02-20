@@ -14,7 +14,7 @@ body
     background: fixed linear-gradient(135deg, #000000 0%,#808080 50%,#3a3a3a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     width:100%;
     height:100%;
-    font-family: 'Ubuntu' !important, sans-serif !important;
+    font-family: 'Ubuntu', sans-serif;
     font-size:12;
 }
 
@@ -82,14 +82,35 @@ main .categories-container .category span.title {
 main .categories-container .category span.border {
    display:block; position:absolute; width:100%; height:8px;
    left:0; top:0;
-   background:red;
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0000+0,ff0000+100&1+0,0+100 */
-    background: -moz-linear-gradient(-45deg, rgba(255,0,0,1) 0%, rgba(255,0,0,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, rgba(255,0,0,1) 0%,rgba(255,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, rgba(255,0,0,1) 0%,rgba(255,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
+   background: linear-gradient(to right, rgba(255,0,0,1) 0%,rgba(255,0,0,0) 100%); 
 }
+
+main .categories-container .category.doku span.border {
+   background: linear-gradient(to right, rgba(90,160,44,1) 0%,rgba(90,160,44,0) 100%); 
+}
+
+main .categories-container .category.comedy span.border {
+   background: linear-gradient(to right, rgba(255,102,0,1) 0%,rgba(255,102,0,0) 100%); 
+}
+
+main .categories-container .category.movie span.border {
+   background: linear-gradient(to right, rgba(200,55,55,1) 0%,rgba(200,55,55,0) 100%); 
+}
+
+main .categories-container .category.info span.border {
+   background: linear-gradient(to right, rgba(44,90,160,1) 0%,rgba(44,90,160,0) 100%); 
+}
+
+main .categories-container .category.series span.border {
+   background: linear-gradient(to right, rgba(151,88,183,1) 0%,rgba(151,88,183,0) 100%); 
+}
+
+main .categories-container .category.other span.border {
+   background: linear-gradient(to right, rgba(170,170,170,1) 0%,rgba(170,170,170,0) 100%); 
+}
+
+
+
 
 main.zoom .categories-container .category {
     height:773px;
@@ -99,19 +120,56 @@ main.zoom .categories-container .category {
 
 /* hover */
 .popular-news .items .pic {
-	position: absolute;
-	top: 0;
-	right:auto;
-	bottom: auto;
-	left: 0;
-	width:407px;
-	height:229px;
+    position: absolute;
+    top: 0;
+    right:auto;
+    bottom: auto;
+    left: 0;
+    width:407px;
+    height:229px;
+    opacity:0.4;
+    transition:opacity .3s ease;
+}
+
+.broadcasterLogo {
+    position: absolute;
+    width: 65px;
+    left: 15px;
+    top: 15px;
+    opacity:0.4;
+    transition:opacity .3s ease;
+}
+
+.popular-news .items a:first-child .pic,
+.popular-news .items a:first-child .broadcasterLogo {
 	opacity:1;
+}
+
+.popular-news .items a:nth-child(2) .pic,
+.popular-news .items a:nth-child(2) .broadcasterLogo {
+	opacity:0.8;
+}
+
+.popular-news .items a:nth-child(3) .pic,
+.popular-news .items a:nth-child(3) .broadcasterLogo {
+	opacity:0.6;
 }
 
 .popular-news .items a:hover .pic {
 	opacity:1;
 	-webkit-filter: none;
+}
+
+.popular-news .items a:hover .broadcasterLogo {
+	opacity:1;
+}
+
+main.zoom .popular-news .items a .pic {
+	opacity:1;
+}
+
+main.zoom .popular-news .items a .broadcasterLogo {
+	opacity:1;
 }
 
 .popular-news .items a span {
@@ -123,8 +181,27 @@ main.zoom .categories-container .category {
 	background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 53%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 53%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	transition:opacity .3s ease;
-	overflow:hidden;
-	word-wrap:break-word; }
+	overflow-x:hidden; overflow-y:hidden; }
+
+.popular-news .items a span p,
+.popular-news .items a span small {
+	display:block;
+	width:400px;
+	white-space:normal !important;
+	text-overflow: ellipsis;
+	overflow-y:hidden;
+}
+
+.popular-news .items a span p {
+	margin-bottom:10px;
+	max-height:68px;
+}
+
+.popular-news .items a span small {
+	margin-bottom:10px;
+	max-height:87px;
+}
+
 
 main .popular-news .items { transition:margin .3s ease; }
 main .popular-news .items:hover { margin-left:-305px }
@@ -226,9 +303,20 @@ footer,
     font-size: 200%;
 }
 
-.broadcasterLogo{
-    position: absolute;
-    width: 65px;
-    right: 45px;
-    top: 5px;
+/* title */
+h1.mainTitle {
+    position:absolute;
+    left:70px;
+    top:60px;
+    color:white;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: normal;
+    font-size:50px;
 }
+
+h1.mainTitle small {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: normal;
+    font-size:40px;
+}
+

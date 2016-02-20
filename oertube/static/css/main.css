@@ -71,12 +71,6 @@
 /*                     BASE                     */
 /*----------------------------------------------*/
 
-/**/
-/* fonts */
-/**/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 
 /**/
 /* reset */
@@ -125,27 +119,11 @@ button::-moz-focus-inner {
 /**/
 html, body {
 	background: #fff url(../img/patterns/item-1.png);
-	font: 400 14px/1.5 Montserrat, Helvetica, Arial, sans-serif;
 	color: #000;
 }
 a {
 	text-decoration: none;
 	color: inherit;
-}
-@media screen and (max-width: 1229px) { /* laptop */
-	html, body {
-		font-size: 13px;
-	}
-}
-@media screen and (max-width: 979px) { /* pad */
-	html, body {
-		font-size: 12px;
-	}
-}
-@media screen and (max-width: 767px) { /* phone */
-	html, body {
-		font-size: 11px;
-	}
 }
 
 
@@ -918,7 +896,6 @@ a {
 	visibility: hidden;
 	width: 150px;
 	margin: 6px 0 0 -75px;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 10px;
 	line-height: 18px;
 	font-weight: 400;
@@ -1588,7 +1565,6 @@ a {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	color: #828282;
 }
 .recent-news .item-large .comments {
@@ -1603,7 +1579,6 @@ a {
 }
 .recent-news .item-medium p {
 	margin: 15px 0;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 }
 .recent-news .item-medium .pic {
 	display: block;
@@ -1624,7 +1599,6 @@ a {
 }
 .recent-news .item-medium .date {
 	margin-top: 0.5em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-style: italic;
 	color: #878787;
 }
@@ -1684,7 +1658,6 @@ a {
 	opacity: 1;
 }
 .recent-news .item-small .date {
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 	color: #878787;
 }
@@ -2116,7 +2089,6 @@ a {
 	text-decoration: underline;
 }
 .blog-list p {
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	color: #3f3f3f;
 }
 .blog-list .item {
@@ -2138,7 +2110,6 @@ a {
 .blog-list .date {
 	float: right;
 	padding: 0 1em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-style: italic;
 	color: #878787;
 }
@@ -2394,7 +2365,6 @@ a {
 }
 .blog-post .author p {
 	margin-top: 0.5em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	color: #556270;
 }
 .blog-post .author i {
@@ -2417,7 +2387,6 @@ a {
 	background: #fff;
 }
 .blog-post .author .position {
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 	font-style: italic;
 	color: #878787;
@@ -2580,7 +2549,6 @@ a {
 }
 .blog-post .cont p {
 	margin-top: 1.5em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	color: #3f3f3f;
 }
 .blog-post .cont img {
@@ -2592,7 +2560,6 @@ a {
 	margin-top: 1.5em;
 	padding-left: 2em;
 	border-left: 0.5em solid #ffcc39;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 1.14em;
 	font-style: italic;
 	color: #737373;
@@ -2695,7 +2662,6 @@ a {
 }
 .blog-comments .date {
 	float: right;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 	font-style: italic;
 	color: #878787;
@@ -2783,7 +2749,6 @@ a {
 }
 .related-posts .date {
 	margin: 0 0 0.5em 120px;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 	font-style: italic;
 	color: #878787;
@@ -3591,7 +3556,6 @@ a {
 }
 .widget-about p {
 	margin-bottom: 1.5em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 }
 .widget-about .more {
@@ -3662,7 +3626,6 @@ a {
 	position: relative;
 	padding: 2em;
 	border: 1px solid #2c2c2c;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 }
 .widget-tweets .item:after {
@@ -3729,7 +3692,6 @@ a {
 }
 .widget-subscribe p {
 	margin-bottom: 1.5em;
-	font-family: 'Open Sans', Montserrat, Helvetica, Arial, sans-serif;
 	font-size: 0.86em;
 }
 .widget-subscribe input {
