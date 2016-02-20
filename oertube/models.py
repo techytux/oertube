@@ -61,23 +61,17 @@ def get_lists_json():
     return lists_json
 
 def get_list_json(list_name):
-    print "LIST:" + list_name
     list_text = urllib.urlopen("http://editorial.mixd.tv/highlights/" + list_name).read()
     list_json = json.loads(list_text)
-
-    print "HEEREEEEEE:"
 
     new_data_list_json = {}
 
     # get Logo URLs:
     for video in list_json['msg']['data']:
-        print video['broadcaster']
         if video['broadcaster'] in BROADCASTER_TO_LOGO_DICT:
             video['broadcasterLogo'] = BROADCASTER_TO_LOGO_DICT[video['broadcaster']]
         else:
-            print "ERROR: no broadcaster Logo found"
-
-    print "<--- HEEREEEEEE:"
+            print "ERROR: no broadcaster Logo found for " + video['broadcaster']
 
     return list_json
 
