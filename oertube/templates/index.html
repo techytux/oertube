@@ -28,8 +28,7 @@
 		<!--/ metas -->
 
 		<!-- styles -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/static/css/main.css">
+		<link href='https://fonts.googleapis.com/css?family=Allerta+Stencil|Ubuntu:300' rel='stylesheet' type='text/css'>		<link rel="stylesheet" href="/static/css/main.css">
 		<link rel="stylesheet" href="/static/css/bootstrap-horizon.css">
         <link rel="stylesheet" href="/static/css/style.css">
 
@@ -322,7 +321,7 @@
 						<span class="title">Doku</span><span class="border" />
 					</div>
 					<div class="category">
-						<span class="title">Comedy</span><span class="border" />
+						<span class="title">Unterhaltung</span><span class="border" />
 					</div>
 					<div class="category">
 						<span class="title">Spielfilm</span><span class="border" />
@@ -391,18 +390,6 @@
 						</div>
 						<!--/ hot news -->
 
-						<!-- popuplar info -->
-						<div id="popular-1" class="popular-news" ng-controller="indexController">
-							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
-									<div class="pic" style="background-image: url({{info.image}})"></div>
-									<span>{{info.name}}</span>
-								</a>
-
-							</div>
-						</div>
-						<!--/ popuplar info -->
-
 						<!-- popuplar docu -->
 						<div id="popular-2" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
@@ -415,18 +402,7 @@
 						</div>
 						<!--/ popuplar docu -->
 
-						<!-- popuplar docu -->
-						<div id="popular-3" class="popular-news" ng-controller="indexController">
-							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
-									<div class="pic" style="background-image: url({{movie.image}})"></div>
-									<span>{{movie.name}}</span>
-								</a>
-
-							</div>
-						</div>
-						<!--/ popuplar docu -->
-						<!-- popuplar docu -->
+						<!-- popuplar comedy -->
 						<div id="popular-4" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights">
@@ -436,7 +412,32 @@
 
 							</div>
 						</div>
-						<!--/ popuplar docu -->
+						<!--/ popuplar comedy -->
+
+						<!-- popuplar movie -->
+						<div id="popular-3" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
+									<div class="pic" style="background-image: url({{movie.image}})"></div>
+									<span>{{movie.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar movie -->
+
+						<!-- popuplar info -->
+						<div id="popular-1" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
+									<div class="pic" style="background-image: url({{info.image}})"></div>
+									<span>{{info.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar info -->
+
 						<!-- popuplar docu -->
 						<div id="popular-5" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
