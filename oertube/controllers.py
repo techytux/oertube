@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, request, Response
-from flask import render_template, url_for, redirect, send_from_directory
+from flask import render_template, url_for, redirect, send_from_directory, jsonify
 from flask import send_file, make_response, abort
 
 from oertube import app
@@ -45,7 +45,8 @@ def rest_pages(model_name, item_id=None):
 
 @app.route('/lists')
 def lists(item_id=None):
-    return redirect("http://editorial.mixd.tv/puls-highlights")
+    lists_json = get_lists_json()
+    return jsonify(lists_json) # lists_json
 
 
 # special file handlers and error handlers
