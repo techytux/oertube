@@ -9,11 +9,19 @@ var zielHeightAndMargin = 773;
 var baseOffsetX = zielX;
 var baseOffsetY = zielY;
 
+var currentVideoA;
+var videoPlayer;
+
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
 	for(var element in elements) {
 		registerClickEvent(elements[element]);
 	}
+}
+
+function onVideoPause(){
+	$('.video-container').css("z-index", "-1");
+	zoomHalfTo(currentVideoA)
 }
 
 function registerClickEvent(a)
@@ -29,25 +37,33 @@ function registerClickEvent(a)
 		else
 		{
 			zoomFullTo(a);
-
+			currentVideoA = a
 			function playVideo(){
 					var MP4Link = a.href;
 					console.log($(a))
 					var description = $(a).find($("span p")).text();
 					console.log("DESC" + description)
-					var videoPlayer = $('.videoPlayer')[0];
+					videoPlayer = $('.videoPlayer')[0];
 
 					$('.video-container').css("z-index", "100");
 					videoPlayer.src = MP4Link
-					videoPlayer.load();
-			        videoPlayer.play();
+					// videoPlayer.load();
+			        // videoPlayer.play();
 
+					videoPlayer.onpause = onVideoPause
+					
 					$('.video-overlay-h1').text(description)
 			}
 
 			setTimeout(playVideo, 600)
 		}
 	};
+}
+
+function onXClick(){
+	$('.video-container').css("z-index", "-1");
+	videoPlayer.pause();
+	zoomOut()
 }
 
 function zoomHalfTo(a)
