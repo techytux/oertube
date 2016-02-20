@@ -1,0 +1,46 @@
+body {
+    overflow: hidden;
+}
+
+.grid-cont {
+    width: auto;
+}
+
+.popular-news {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.popular-news .items a {
+    background-color: #aaaaaa;
+    width: 320px;
+    height: 160px;
+    margin: 10px 0 0 10px;
+}
+
+main {
+    transform: scale(1.0);
+    transform-origin: 0 0;
+    transition: all .5s ease;
+}
+
+main:hover {
+    transform: scale(2.0);
+    transform-origin: 0 0;
+    transition: all .5s ease;
+}
+
+
+
+/* hide */
+
+header,
+footer,
+.hot-news,
+.popular-news .tabs,
+#scroll-top,
+#video-player,
+.fa-chevron-right {
+    display: none;
+}
