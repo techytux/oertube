@@ -54,3 +54,18 @@ def save_rating(video_id, rating):
                     "rating": rating}
     ratings_collection.insert_one(video_rating)
     return {"result": "success"}
+
+def get_ratings():
+    client = MongoClient('localhost', 27000)
+    db = client.puls_hackday
+    ratings_collection = db.ratings
+
+    db.ratings.find()
+    ratings_dict = {"elements": []}
+    for rating in db.ratings.find():
+        rating = {
+            "entityId": rating['entityId'],
+            "rating": rating['rating']
+        }
+        ratings_dict['elements'].append(rating)
+    return ratings_dict
