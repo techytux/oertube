@@ -21,13 +21,11 @@ body {
 
 main {
     transform: scale(1.0);
-    transform-origin: 0 0;
     transition: all .5s ease;
 }
 
-main:hover {
-    transform: scale(2.0);
-    transform-origin: 0 0;
+main.zoom {
+    transform: scale(3.0);
     transition: all .5s ease;
 }
 
