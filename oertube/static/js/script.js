@@ -81,6 +81,9 @@ function unpauseVideo(a){
 		$('.video-overlay-h1').text(description)
 }
 
+function playVideoTimeout(){
+	playVideo(currentVideoA)
+}
 
 function registerClickEvent(a)
 {
@@ -96,8 +99,7 @@ function registerClickEvent(a)
 		{
 			zoomFullTo(a);
 			currentVideoA = a
-			playVideo(currentVideoA)
-			setTimeout(playVideo, 600)
+			setTimeout(playVideoTimeout, 600)
 		}
 	};
 }
