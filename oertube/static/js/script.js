@@ -13,6 +13,8 @@ var currentVideoA;
 var videoPlayer;
 var isVideoPlaying = false;
 
+var selectedStart = 0;
+
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
 	for(var element in elements) {
@@ -40,6 +42,10 @@ $(function() {
   });
 })
 
+
+function mouseOverStar(){
+	console.log("Over a Star!")
+}
 
 function onVideoClick(){
 	videoPlayer.pause()
@@ -106,6 +112,7 @@ function zoomHalfTo(a)
 {
 	var zoomFactor = 1170.0 / teaserWidth;
 	zoomTo(a, zoomFactor, zielX, zielY);
+	$(".stars_div").css("display", "block")
 }
 
 function zoomFullTo(a)
