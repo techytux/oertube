@@ -73,7 +73,17 @@ footer,
     opacity: .60;
     -moz-opacity: 0.60;
     filter:alpha(opacity=60);
+
+    visibility: visible;
+    transition: opacity 0.7s linear;
 }
+
+.video-overlay.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.7s, opacity 0.7s linear;
+}
+
 
 .video-overlay-text {
     position: absolute;
@@ -102,6 +112,8 @@ footer,
     opacity: .60;
     -moz-opacity: 0.60;
     filter:alpha(opacity=60);
+    visibility: visible;
+    transition: opacity 0.7s linear;
 }
 
 .video-overlay-text-x {
