@@ -48,6 +48,11 @@ def lists(item_id=None):
     lists_json = get_lists_json()
     return jsonify(lists_json) # lists_json
 
+@app.route('/list/<list_name>')
+def list(list_name, item_id=None):
+    list_json = get_list_json(list_name)
+    return jsonify(list_json) # lists_json
+
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')
