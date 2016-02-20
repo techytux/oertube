@@ -18,7 +18,7 @@
 	<script src="/static/lib/bootstrap/bootstrap.min.js"></script>
 </head> -->
 <head>
-		<title>öplayer</title>
+		<title>örtube</title>
 
 		<!-- metas -->
 		<meta charset="utf-8">
@@ -89,7 +89,7 @@
 						<div class="grid-row">
 							<div class="grid-col grid-col-2">
 								<!-- slogan -->
-								<a href="index.php" class="slogan"><span>öplayer</span></a>
+								<a href="index.php" class="slogan"><span>örtube</span></a>
 								<!--/ slogan -->
 							</div>
 
@@ -297,145 +297,172 @@
 			</header>
 			<!--/ page header -->
 			<!-- page content -->
+
 			<main class="page-content">
 
-				<div class="grid-cont">
-					<!-- hot news -->
-					<div class="hot-news">
-						<div class="grid-row">
-							<div class="grid-col grid-col-12">
-								<a href="http://ondemand-ww.wdr.de/medstdp/fsk0/92/928447/928447_10198794.mp4">
-									<span class="pic" style="background-image: url('http://static-cdn.arte.tv/papi/tvguide/images/1542133/W940H530/061654-000-A_resistencekeime_01-1452209993613.jpg'); background-position: center top"></span>
-									<h5>Doku</h5>
-									<h2>Resistente Keime</h2>
-									<i class="fa fa-share fa-flip-vertical"></i>
-								</a>
-							</div>
-
-							<div class="grid-col grid-col-6">
-								<a href="http://rodl.zdf.de/none/zdf/15/12/151228_stralsund_anschlag_ps_fdw_1456k_p13v12.mp4" class="large">
-									<span class="pic" style="background-image: url('http://www.zdf.de/ZDFmediathek/contentblob/2615462/timg476x268blob/12597355'); background-position: center top"></span>
-									<h5>SpielFilm</h5>
-									<h2>Stralsund - Der Anschlag</h2>
-									<i class="fa fa-share fa-flip-vertical"></i>
-								</a>
-							</div>
-
-							<div class="grid-col grid-col-6">
-								<a href="http://mvideos.daserste.de/videoportal/Film/c_600000/603443/format698119.mp4" class="small">
-									<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/50/40/36/2121327408/16x9/512'); background-position:center top"></span>
-									<h5>Info</h5>
-									<h3>Wissen vor acht</h3>
-									<i class="fa fa-share fa-flip-vertical"></i>
-								</a>
-							</div>
-
-							<div class="grid-col grid-col-3">
-								<a href="http://media.ndr.de/progressive/2016/0218/TV-20160218-2259-3342.hq.mp4" class="small">
-									<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/51/24/46/2121327408/16x9/960')"></span>
-									<h5>Comedy</h5>
-									<h4>Oje, Angela!</h4>
-									<small><i class="fa fa-share fa-flip-vertical"></i></small>
-								</a>
-							</div>
-
-							<div class="grid-col grid-col-3">
-								<a href="http://cdn-storage.br.de/b7/2016-02/20/a7441620d76a11e58a90984be10adece_X.mp4" class="small">
-									<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/55/38/84/-1774185891/16x9/512')"></span>
-									<h5>Musik</h5>
-									<h4>PULS Festival</h4>
-									<small><i class="fa fa-share fa-flip-vertical"></i></small>
-								</a>
-							</div>
-						</div>
+				<div class="categories-container">
+					<div class="category">
+						<span class="title">Doku</span><span class="border" />
 					</div>
-					<!--/ hot news -->
-
-					<!-- popuplar info -->
-					<div id="popular-1" class="popular-news" ng-controller="indexController">
-						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-							<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
-								<div class="pic" style="background-image: url({{info.image}})"></div>
-								<span>{{info.name}}</span>
-							</a>
-
-						</div>
+					<div class="category">
+						<span class="title">Comedy</span><span class="border" />
 					</div>
-					<!--/ popuplar info -->
-
-					<!-- popuplar docu -->
-					<div id="popular-2" class="popular-news" ng-controller="indexController">
-						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-							<a href="{{docu.fileLocations[0].url}}" ng-repeat="docu in docuHighlights">
-								<div class="pic" style="background-image: url({{docu.image}})"></div>
-								<span>{{docu.name}}</span>
-							</a>
-
-						</div>
+					<div class="category">
+						<span class="title">Spielfilm</span><span class="border" />
 					</div>
-					<!--/ popuplar docu -->
-
-					<!-- popuplar docu -->
-					<div id="popular-3" class="popular-news" ng-controller="indexController">
-						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-							<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
-								<div class="pic" style="background-image: url({{movie.image}})"></div>
-								<span>{{movie.name}}</span>
-							</a>
-
-						</div>
+					<div class="category">
+						<span class="title">Info</span><span class="border" />
 					</div>
-					<!--/ popuplar docu -->
-					<!-- popuplar docu -->
-					<div id="popular-4" class="popular-news" ng-controller="indexController">
-						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-							<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights">
-								<div class="pic" style="background-image: url({{comedy.image}})"></div>
-								<span>{{comedy.name}}</span>
-							</a>
-
-						</div>
+					<div class="category">
+						<span class="title">Serie</span><span class="border" />
 					</div>
-					<!--/ popuplar docu -->
-					<!-- popuplar docu -->
-					<div id="popular-5" class="popular-news" ng-controller="indexController">
-						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-							<a href="{{series.fileLocations[0].url}}" ng-repeat="series in seriesHighlights">
-								<div class="pic" style="background-image: url({{series.image}})"></div>
-								<span>{{series.name}}</span>
-							</a>
-
-						</div>
+					<div class="category">
+						<span class="title">Mal was anderes</span><span class="border" />
 					</div>
-					<!--/ popuplar docu -->
-
-
-
-					<!-- video player -->
-					<div id="video-player" class="video-player">
-						<div class="title">Recommended Videos</div>
-						<div class="player">
-							<iframe src="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0"></iframe>
-						</div>
-						<div class="playlist">
-							<ul>
-								<li>
-									<a href="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0" class="active" style="background-image: url(pic/video-player/item-1.jpg)"><span>Consectetur adipisicing elit, sed do eiusmod tempor</span><i class="fa fa-play"></i></a>
-								</li>
-								<li>
-									<a href="https://player.vimeo.com/video/115014610?color=ffcc3a" style="background-image: url(pic/video-player/item-2.jpg)"><span>Laboris nisi ut aliquip ex ea commodo consequat</span><i class="fa fa-play"></i></a>
-								</li>
-								<li>
-									<a href="https://www.youtube.com/embed/fkvNSXNLV1g?showinfo=0" style="background-image: url(pic/video-player/item-3.jpg)"><span>Sed do eiusmod tempor incididunt ut labore et dolore</span><i class="fa fa-play"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!--/ video player -->
 				</div>
 
+				<div class="zoomer">
+					<div class="grid-cont">
+						<!-- hot news -->
+						<div class="hot-news">
+							<div class="grid-row">
+								<div class="grid-col grid-col-12">
+									<a href="http://ondemand-ww.wdr.de/medstdp/fsk0/92/928447/928447_10198794.mp4">
+										<span class="pic" style="background-image: url('http://static-cdn.arte.tv/papi/tvguide/images/1542133/W940H530/061654-000-A_resistencekeime_01-1452209993613.jpg'); background-position: center top"></span>
+										<h5>Doku</h5>
+										<h2>Resistente Keime</h2>
+										<i class="fa fa-share fa-flip-vertical"></i>
+									</a>
+								</div>
+
+								<div class="grid-col grid-col-6">
+									<a href="http://rodl.zdf.de/none/zdf/15/12/151228_stralsund_anschlag_ps_fdw_1456k_p13v12.mp4" class="large">
+										<span class="pic" style="background-image: url('http://www.zdf.de/ZDFmediathek/contentblob/2615462/timg476x268blob/12597355'); background-position: center top"></span>
+										<h5>SpielFilm</h5>
+										<h2>Stralsund - Der Anschlag</h2>
+										<i class="fa fa-share fa-flip-vertical"></i>
+									</a>
+								</div>
+
+								<div class="grid-col grid-col-6">
+									<a href="http://mvideos.daserste.de/videoportal/Film/c_600000/603443/format698119.mp4" class="small">
+										<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/50/40/36/2121327408/16x9/512'); background-position:center top"></span>
+										<h5>Info</h5>
+										<h3>Wissen vor acht</h3>
+										<i class="fa fa-share fa-flip-vertical"></i>
+									</a>
+								</div>
+
+								<div class="grid-col grid-col-3">
+									<a href="http://media.ndr.de/progressive/2016/0218/TV-20160218-2259-3342.hq.mp4" class="small">
+										<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/51/24/46/2121327408/16x9/960')"></span>
+										<h5>Comedy</h5>
+										<h4>Oje, Angela!</h4>
+										<small><i class="fa fa-share fa-flip-vertical"></i></small>
+									</a>
+								</div>
+
+								<div class="grid-col grid-col-3">
+									<a href="http://cdn-storage.br.de/b7/2016-02/20/a7441620d76a11e58a90984be10adece_X.mp4" class="small">
+										<span class="pic" style="background-image: url('http://www.ardmediathek.de/ard/servlet/image/00/33/55/38/84/-1774185891/16x9/512')"></span>
+										<h5>Musik</h5>
+										<h4>PULS Festival</h4>
+										<small><i class="fa fa-share fa-flip-vertical"></i></small>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!--/ hot news -->
+
+						<!-- popuplar info -->
+						<div id="popular-1" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
+									<div class="pic" style="background-image: url({{info.image}})"></div>
+									<span>{{info.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar info -->
+
+						<!-- popuplar docu -->
+						<div id="popular-2" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{docu.fileLocations[0].url}}" ng-repeat="docu in docuHighlights">
+									<div class="pic" style="background-image: url({{docu.image}})"></div>
+									<span>{{docu.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar docu -->
+
+						<!-- popuplar docu -->
+						<div id="popular-3" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
+									<div class="pic" style="background-image: url({{movie.image}})"></div>
+									<span>{{movie.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar docu -->
+						<!-- popuplar docu -->
+						<div id="popular-4" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights">
+									<div class="pic" style="background-image: url({{comedy.image}})"></div>
+									<span>{{comedy.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar docu -->
+						<!-- popuplar docu -->
+						<div id="popular-5" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{series.fileLocations[0].url}}" ng-repeat="series in seriesHighlights">
+									<div class="pic" style="background-image: url({{series.image}})"></div>
+									<span>{{series.name}}</span>
+								</a>
+
+							</div>
+						</div>
+						<!--/ popuplar docu -->
+
+
+
+						<!-- video player -->
+						<div id="video-player" class="video-player">
+							<div class="title">Recommended Videos</div>
+							<div class="player">
+								<iframe src="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0"></iframe>
+							</div>
+							<div class="playlist">
+								<ul>
+									<li>
+										<a href="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0" class="active" style="background-image: url(pic/video-player/item-1.jpg)"><span>Consectetur adipisicing elit, sed do eiusmod tempor</span><i class="fa fa-play"></i></a>
+									</li>
+									<li>
+										<a href="https://player.vimeo.com/video/115014610?color=ffcc3a" style="background-image: url(pic/video-player/item-2.jpg)"><span>Laboris nisi ut aliquip ex ea commodo consequat</span><i class="fa fa-play"></i></a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/embed/fkvNSXNLV1g?showinfo=0" style="background-image: url(pic/video-player/item-3.jpg)"><span>Sed do eiusmod tempor incididunt ut labore et dolore</span><i class="fa fa-play"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--/ video player -->
+					</div>
+				</div>
 			</main>
 			<!--/ page content -->
+
+			<div id="floating-logo">
+				<img src="/static/img/corner_logo.png" width="247" height="141" alt="örtube" />
+			</div>
 
 			<!-- page footer -->
 			<footer class="page-footer">

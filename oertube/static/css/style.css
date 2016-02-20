@@ -1,6 +1,23 @@
-body {
-    overflow: hidden;
+html
+{
+    width:100%; height:100%;
+    position:relative;
 }
+
+body
+{
+    overflow: hidden;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,808080+50,3a3a3a+100 */
+    background: #000000; /* Old browsers */
+    background: fixed -moz-linear-gradient(-45deg, #000000 0%, #808080 50%, #3a3a3a 100%); /* FF3.6-15 */
+    background: fixed -webkit-linear-gradient(-45deg, #000000 0%,#808080 50%,#3a3a3a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: fixed linear-gradient(135deg, #000000 0%,#808080 50%,#3a3a3a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    width:100%; height:100%
+}
+
+.page {
+    background: transparent;
+ }
 
 .grid-cont {
     width: auto;
@@ -18,23 +35,108 @@ body {
 }
 
 .popular-news .items a {
-    background-color: #aaaaaa;
-    width: 407px;
-    height: 229px;
-    margin: 0 40px 40px 0;
+    background-color: transparent;
+    width: 447px;
+    height: 269px;
 }
 
-main {
+main .zoomer {
+    position: absolute;
     transform: scale(1.0);
     transition: transform .5s ease;
 }
 
-main.zoom {
+main.zoom .zoomer {
     transform: scale(2.874692875);
     transition: transform .5s ease;
 }
 
+main .categories-container {
+    position:absolute;
+    left:0; width:100%; top:0;
+    padding: 193px 0 0 40px;
+    transition: margin .5s ease;
+}
 
+main .categories-container .category {
+    color:white;
+    height:269px;
+    transition: height .5s ease;
+    position:relative; 
+}
+
+main .categories-container .category span.title {
+   display:block; position:absolute; left:0; top:0;
+   margin:20px 0 0 0;
+}
+
+main .categories-container .category span.border {
+   display:block; position:absolute; width:100%; height:8px;
+   left:0; top:0;
+   background:red; 
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0000+0,ff0000+100&1+0,0+100 */
+    background: -moz-linear-gradient(-45deg, rgba(255,0,0,1) 0%, rgba(255,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(255,0,0,1) 0%,rgba(255,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(255,0,0,1) 0%,rgba(255,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+main.zoom .categories-container .category {
+    height:773px;
+    transition: height .5s ease;
+}
+
+
+/* hover */
+.popular-news .items .pic {
+	position: absolute;
+	top: 0;
+	right:auto;
+	bottom: auto;
+	left: 0;
+	width:407px;
+	height:229px;
+	opacity:1;
+}
+
+.popular-news .items a:hover .pic {
+	opacity:1;
+	-webkit-filter: none;
+}
+
+.popular-news .items a span { 
+	opacity:0; display:block; position:absolute; 		              
+	left:0; top:0; right:40px; bottom:40px;
+	padding:40px 40px 40px 300px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.5+0,1+53,1+74,1+100 */
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 53%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 53%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 53%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	transition:opacity .3s ease;
+	overflow:hidden;
+	word-wrap:break-word; }
+
+main .popular-news .items { transition:margin .3s ease; }
+
+main .popular-news .items:hover { margin-left:-335px}
+main.zoom .popular-news .items:hover { margin-left:0px}
+
+main .popular-news .items a { transition:width .3s ease }
+
+main .popular-news .items a:hover { width:782px; color:white; }
+main.zoom .popular-news .items a:hover { width:447px; }
+main .popular-news .items a:hover span { opacity:1 }
+main.zoom .popular-news .items a:hover span { opacity:0 }
+
+
+/* Logo */
+
+#floating-logo {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
 
 /* hide */
 
