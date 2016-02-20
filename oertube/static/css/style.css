@@ -174,12 +174,12 @@ main.zoom .categories-container .category {
 }
 
 .popular-news .items a:hover .pic {
-	opacity:1;
+	opacity:1 !important;
 	-webkit-filter: none;
 }
 
 .popular-news .items a:hover .broadcasterLogo {
-	opacity:1;
+	opacity:1 !important;
 }
 
 main.zoom .popular-news .items a .pic {
