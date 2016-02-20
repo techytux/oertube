@@ -35,6 +35,26 @@ app.config['API_MODELS'] = {'post': Post}
 app.config['CRUD_URL_MODELS'] = {'post': Post}
 
 
+BROADCASTER_TO_LOGO_DICT = {
+    "ARD": "http://images.mixd.tv/images/320/ard.png",
+    "ZDF": "http://images.mixd.tv/images/320/zdf.png",
+    "3SA": "http://images.mixd.tv/images/320/3sa.png",
+    "FES": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Einsfestival_2009.svg/320px-Einsfestival_2009.svg.png",
+    "RAB": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logo_Radio_Bremen_TV.svg/320px-Logo_Radio_Bremen_TV.svg.png",
+    "KKA": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kika_2012.svg/320px-Kika_2012.svg.png",
+    "ART": "http://images.mixd.tv/images/320/",
+    "DW": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Deutsche_Welle_Logo.svg/320px-Deutsche_Welle_Logo.svg.png",
+    "HF": "http://images.mixd.tv/images/320/hf.png",
+    "MDR": "http://images.mixd.tv/images/320/mdr.png",
+    "WDR": "http://images.mixd.tv/images/320/wdr.png",
+    "BR": "http://images.mixd.tv/images/320/br.png",
+    "RBB": "http://images.mixd.tv/images/320/rbb.png",
+    "SWR": "http://images.mixd.tv/images/320/swr.png",
+    "ZDF": "http://images.mixd.tv/images/320/zdf.png",
+    "ZDI": "http://images.mixd.tv/images/320/zdi.png",
+    "ZNO": "http://images.mixd.tv/images/320/zno.png",
+}
+
 def get_lists_json():
     lists_text = urllib.urlopen("http://editorial.mixd.tv/puls-highlights").read()
     lists_json = json.loads(lists_text)
@@ -44,6 +64,21 @@ def get_list_json(list_name):
     print "LIST:" + list_name
     list_text = urllib.urlopen("http://editorial.mixd.tv/highlights/" + list_name).read()
     list_json = json.loads(list_text)
+
+    print "HEEREEEEEE:"
+
+    new_data_list_json = {}
+
+    # get Logo URLs:
+    for video in list_json['msg']['data']:
+        print video['broadcaster']
+        if video['broadcaster'] in BROADCASTER_TO_LOGO_DICT:
+            video['broadcasterLogo'] = BROADCASTER_TO_LOGO_DICT[video['broadcaster']]
+        else:
+            print "ERROR: no broadcaster Logo found"
+
+    print "<--- HEEREEEEEE:"
+
     return list_json
 
 def save_rating(video_id, rating):
