@@ -297,9 +297,9 @@
 			<!--/ page header -->
 			<!-- page content -->
 			<main class="page-content">
-				<!--<div id="video-container" class="col-md-12 video-container" onmousemove="onVideoMouseMove()">
-					<video class="video" width="100%" height="100%" controls autoplay>
-						<source src="http://rodl.zdf.de/none/zdf/16/02/160218_s3_f3_kpz_1456k_p13v12.mp4" type="video/mp4" />
+				<div id="video-container" class="col-md-12 video-container" onmousemove="onVideoMouseMove()">
+					<video class="videoPlayer" width="100%" height="100%" controls autoplay>
+						<source src="" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 
@@ -310,11 +310,11 @@
 					</div>
 					<div class="video-overlay">
 						<div class="video-overlay-text">
-								<h1>Kuttner plus Zwei</h1>
-								<h2>Staffel 3 - Folge 3</h2>
+								<h1 class="video-overlay-h1"></h1>
+								<h2 class="video-overlay-h2"></h2>
 						</div>
 					</div>
-		    		</div>-->
+    			</div>
 
 				<div class="categories-container">
 					<div class="category">
@@ -391,11 +391,14 @@
 						<!--/ hot news -->
 
 						<!-- popuplar docu -->
-						<div id="popular-2" class="popular-news" ng-controller="indexController">
+						<div id="popular-1" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{docu.fileLocations[0].url}}" ng-repeat="docu in docuHighlights">
 									<div class="pic" style="background-image: url({{docu.image}})"></div>
-									<span>{{docu.name}}</span>
+									<span>
+										<p>{{docu.name}}</p>
+										<small>{{docu.description}}</small>
+									</span>
 								</a>
 
 							</div>
@@ -403,23 +406,30 @@
 						<!--/ popuplar docu -->
 
 						<!-- popuplar comedy -->
-						<div id="popular-4" class="popular-news" ng-controller="indexController">
+						<div id="popular-2" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights">
 									<div class="pic" style="background-image: url({{comedy.image}})"></div>
-									<span>{{comedy.name}}</span>
+									<span>
+										<p>{{comedy.name}}</p>
+										<small>{{comedy.description}}</small>
+									</span>
 								</a>
 
 							</div>
 						</div>
 						<!--/ popuplar comedy -->
 
+
 						<!-- popuplar movie -->
 						<div id="popular-3" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
 									<div class="pic" style="background-image: url({{movie.image}})"></div>
-									<span>{{movie.name}}</span>
+									<span>
+										<p>{{movie.name}}</p>
+										<small>{{movie.description}}</small>
+									</span>
 								</a>
 
 							</div>
@@ -427,28 +437,33 @@
 						<!--/ popuplar movie -->
 
 						<!-- popuplar info -->
-						<div id="popular-1" class="popular-news" ng-controller="indexController">
+						<div id="popular-4" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
 									<div class="pic" style="background-image: url({{info.image}})"></div>
-									<span>{{info.name}}</span>
+									<span>
+										<p>{{info.name}}</p>
+										<small>{{info.description}}</small>
+									</span>
 								</a>
-
 							</div>
 						</div>
 						<!--/ popuplar info -->
 
-						<!-- popuplar docu -->
+						<!-- popuplar series -->
 						<div id="popular-5" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
 								<a href="{{series.fileLocations[0].url}}" ng-repeat="series in seriesHighlights">
 									<div class="pic" style="background-image: url({{series.image}})"></div>
-									<span>{{series.name}}</span>
+									<span>
+										<p>{{series.name}}</p>
+										<small>{{series.description}}</small>
+									</span>
 								</a>
 
 							</div>
 						</div>
-						<!--/ popuplar docu -->
+						<!--/ popuplar series -->
 
 
 				</div>
