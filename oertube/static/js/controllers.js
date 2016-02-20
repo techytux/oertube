@@ -34,7 +34,6 @@ function hideOverlay(){
 		// make sure the overlay is only hidden after no mouse move was induces in the last 3 seconds
 		content.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 10);
 		contentx.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 10);
-		console.log('HelllYeaH!: ' + content);
 	}
 }
 
