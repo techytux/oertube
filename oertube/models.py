@@ -92,17 +92,14 @@ def save_rating(video_id, rating):
     highlights_collection = editorial_prod_db.highlights
     video_dict = highlights_collection.find_one({'entityId': video_id})
 
-    print "=================================="
-    print video_id
-    print "=================================="
-    print video_dict
-    print "=================================="
-
-    video_rating = {"entityId": video_id,
-                    "data": video_dict,
-                    "rating": rating}
-    ratings_collection.insert_one(video_rating)
-    return {"result": "success"}
+    if video_dict:
+        video_rating = {"entityId": video_id,
+                        "data": video_dict,
+                        "rating": rating}
+        ratings_collection.insert_one(video_rating)
+        return {"result": "success"}
+    else:
+        return {"result": "Error, ID not found in Highlights"}
 
 def get_ratings():
     client = MongoClient('localhost', 27000)
