@@ -1,35 +1,38 @@
 'use strict';
 
-angular.module('AngularFlask', ['angularFlaskServices'])
-	.config(['$routeProvider', '$locationProvider',
-		function($routeProvider, $locationProvider) {
-		$routeProvider
-		.when('/', {
-			templateUrl: 'static/partials/landing.html',
-			controller: IndexController
-		})
-		.when('/about', {
-			templateUrl: 'static/partials/about.html',
-			controller: AboutController
-		})
-		.when('/post', {
-			templateUrl: 'static/partials/post-list.html',
-			controller: PostListController
-		})
-		.when('/post/:postId', {
-			templateUrl: '/static/partials/post-detail.html',
-			controller: PostDetailController
-		})
-		/* Create a "/blog" route that takes the user to the same place as "/post" */
-		.when('/blog', {
-			templateUrl: 'static/partials/post-list.html',
-			controller: PostListController
-		})
-		.otherwise({
-			redirectTo: '/'
-		})
-		;
+angular.module('AngularFlask', ['angularFlaskServices', 'angularFlaskControllers']);
 
-		$locationProvider.html5Mode(true);
-	}])
-;
+
+angular.module('angularFlaskControllers', []).
+	controller('indexController', function($scope, $http){
+		console.log('Hello');
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07771')
+		.then(function(response){
+			$scope.infoHighlights = response.data.msg.data;
+			console.log($scope.infoHighlights);
+		})
+
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07770')
+		.then(function(response){
+			$scope.docuHighlights = response.data.msg.data;
+			console.log($scope.infoHighlights);
+		})
+
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07773')
+		.then(function(response){
+			$scope.movieHighlights = response.data.msg.data;
+			console.log($scope.infoHighlights);
+		})
+
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07774')
+		.then(function(response){
+			$scope.seriesHighlights = response.data.msg.data;
+			console.log($scope.infoHighlights);
+		})
+
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07775')
+		.then(function(response){
+			$scope.comedyHighlights = response.data.msg.data;
+			console.log($scope.infoHighlights);
+		})
+	});

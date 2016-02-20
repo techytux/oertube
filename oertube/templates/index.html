@@ -31,7 +31,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/static/css/owl.carousel.css">
 		<link rel="stylesheet" href="/static/css/main.css">
+		<link rel="stylesheet" href="/static/css/bootstrap-horizon.css">
 		<!--/ styles -->
+		<script src="/static/lib/angular/angular.js"></script>
+		<script src="/static/lib/angular/angular-resource.js"></script>
+
+		<script src="/static/js/app.js"></script>
+		<script src="/static/js/controllers.js"></script>
+	 	<script src="/static/js/services.js"></script>
 
 </style></head>
 <!-- <body>
@@ -343,58 +350,64 @@
 					</div>
 					<!--/ hot news -->
 
-					<!-- popuplar news -->
-					<div id="popular-news" class="popular-news">
-						<div class="tabs">
-							<a href="#popuplar-news-1" class="active">popular</a>
-							<a href="#popuplar-news-2">recent</a>
-							<a href="#popuplar-news-3">reviewed</a>
-						</div>
-						<div id="popuplar-news-1" class="items items-visible">
-							<a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
+					<!-- popuplar info -->
+					<div id="popular-info" class="popular-news" ng-controller="indexController">
+						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+							<a href="{{info.fileLocation.url}}" ng-repeat="info in infoHighlights">
+								<div class="pic" style="background-image: url({{info.image}})"></div>
+								<span>{{info.name}}</span>
 							</a>
+
 						</div>
-						<div id="popuplar-news-2" class="items">
-							<a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a>
-						</div>
-						<div id="popuplar-news-3" class="items">
-							<a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a><!--
-							--><a href="#">
-								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
-								<span>This is Photoshop version  of Lorem Ipsum</span>
-							</a>
-						</div>
-						<a href="#" class="fa fa-chevron-right"></a>
 					</div>
-					<!--/ popuplar news -->
+					<!--/ popuplar info -->
+
+					<!-- popuplar docu -->
+					<div id="popular-docu" class="popular-news" ng-controller="indexController">
+						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+							<a href="{{docu.fileLocation.url}}" ng-repeat="docu in docuHighlights">
+								<div class="pic" style="background-image: url({{docu.image}})"></div>
+								<span>{{docu.name}}</span>
+							</a>
+
+						</div>
+					</div>
+					<!--/ popuplar docu -->
+
+					<!-- popuplar docu -->
+					<div id="popular-docu" class="popular-news" ng-controller="indexController">
+						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+							<a href="{{movie.fileLocation.url}}" ng-repeat="movie in movieHighlights">
+								<div class="pic" style="background-image: url({{movie.image}})"></div>
+								<span>{{movie.name}}</span>
+							</a>
+
+						</div>
+					</div>
+					<!--/ popuplar docu -->
+					<!-- popuplar docu -->
+					<div id="popular-docu" class="popular-news" ng-controller="indexController">
+						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+							<a href="{{comedy.fileLocation.url}}" ng-repeat="comedy in comedyHighlights">
+								<div class="pic" style="background-image: url({{comedy.image}})"></div>
+								<span>{{comedy.name}}</span>
+							</a>
+
+						</div>
+					</div>
+					<!--/ popuplar docu -->
+					<!-- popuplar docu -->
+					<div id="popular-docu" class="popular-news" ng-controller="indexController">
+						<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+							<a href="{{series.fileLocation.url}}" ng-repeat="series in seriesHighlights">
+								<div class="pic" style="background-image: url({{series.image}})"></div>
+								<span>{{series.name}}</span>
+							</a>
+
+						</div>
+					</div>
+					<!--/ popuplar docu -->
+
 
 
 					<!-- video player -->
