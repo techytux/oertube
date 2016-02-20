@@ -21,12 +21,12 @@ body {
 
 main {
     transform: scale(1.0);
-    transition: all .5s ease;
+    transition: transform .5s ease;
 }
 
 main.zoom {
     transform: scale(3.0);
-    transition: all .5s ease;
+    transition: transform .5s ease;
 }
 
 
