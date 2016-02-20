@@ -3,7 +3,11 @@ from datetime import datetime
 from oertube.core import db
 from oertube import app
 
+# To access rating database
 import pymongo
+from pymongo import MongoClient
+mongo_client = MongoClient()
+
 import json
 import urllib
 
@@ -41,3 +45,12 @@ def get_list_json(list_name):
     list_text = urllib.urlopen("http://editorial.mixd.tv/highlights/" + list_name).read()
     list_json = json.loads(list_text)
     return list_json
+
+def save_rating(video_id, rating):
+    client = MongoClient('localhost', 27000)
+    db = client.puls_hackday
+    ratings_collection = db.ratings
+    video_rating = {"entityId": video_id,
+                    "rating": rating}
+    ratings_collection.insert_one(video_rating)
+    return {"result": "success"}

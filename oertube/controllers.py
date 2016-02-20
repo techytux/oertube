@@ -53,6 +53,13 @@ def list(list_name, item_id=None):
     list_json = get_list_json(list_name)
     return jsonify(list_json) # lists_json
 
+@app.route('/rate/<video_id>/<rating>')
+def rate(video_id, rating, item_id=None):
+    list_json = save_rating(video_id, rating)
+    return jsonify(list_json) # lists_json
+
+
+
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')
