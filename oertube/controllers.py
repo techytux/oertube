@@ -6,6 +6,8 @@ from flask import send_file, make_response, abort
 
 from oertube import app
 
+from bson import json_util
+
 # routing for API endpoints, generated from the models designated as API_MODELS
 from oertube.core import api_manager
 from oertube.models import *
@@ -63,8 +65,11 @@ def ratings():
     ratings_json = get_ratings()
     return jsonify(ratings_json) # lists_json
 
-
-
+@app.route('/get-video/<video_id>')
+def get_video(video_id):
+    video_dict = get_video_by_id(video_id)
+    result_json = {"result": "success", 'data': video_dict['online']}
+    return json_util.dumps(result_json)
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')

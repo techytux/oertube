@@ -60,6 +60,13 @@ def get_lists_json():
     lists_json = json.loads(lists_text)
     return lists_json
 
+def get_video_by_id(video_id):
+    client = MongoClient('localhost', 27000)
+    db = client.media_prod
+    metadata_extended_collection = db.metadata_extended
+    data_dict = metadata_extended_collection.find_one({'entityId': video_id})
+    return data_dict
+
 def get_list_json(list_name):
     list_text = urllib.urlopen("http://editorial.mixd.tv/highlights/" + list_name).read()
     list_json = json.loads(list_text)
