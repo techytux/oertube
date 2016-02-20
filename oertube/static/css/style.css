@@ -139,13 +139,81 @@ main.zoom .popular-news .items a:hover span { opacity:0 }
 }
 
 /* hide */
-
 header,
 footer,
 .hot-news,
 .popular-news .tabs,
 #scroll-top,
-#video-player,
 .fa-chevron-right {
     display: none;
+}
+
+
+.video-container {
+    position: absolute;
+    left:0; top:0; right:0; bottom:0;
+    z-index: 100;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 50px;
+    left:5%;
+    width:90%;
+    height: 15%;
+    background-color: black;
+    opacity: .60;
+    -moz-opacity: 0.60;
+    filter:alpha(opacity=60);
+
+    visibility: visible;
+    transition: opacity 0.7s linear;
+}
+
+.video-overlay.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.7s, opacity 0.7s linear;
+}
+
+
+.video-overlay-text {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 12%;
+    color: white;
+}
+
+.video-overlay-text h1 {
+    font-size: 200%;
+}
+
+.video-overlay-text h2 {
+    font-size: 100%;
+}
+
+
+.video-overlay-x {
+    position: absolute;
+    top: 25px;
+    right:50px;
+    width:50px;
+    height: 50px;
+    background-color: black;
+    opacity: .60;
+    -moz-opacity: 0.60;
+    filter:alpha(opacity=60);
+    visibility: visible;
+    transition: opacity 0.7s linear;
+}
+
+.video-overlay-text-x {
+    position: absolute;
+    left: 15px;
+    top: 7px;
+    width: 90%;
+    height: 12%;
+    color: white;
+    font-size: 200%;
 }

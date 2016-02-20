@@ -297,8 +297,25 @@
 			</header>
 			<!--/ page header -->
 			<!-- page content -->
-
 			<main class="page-content">
+				<div id="video-container" class="col-md-12 video-container" onmousemove="onVideoMouseMove()">
+					<video class="video" width="100%" height="100%" controls autoplay>
+						<source src="http://rodl.zdf.de/none/zdf/16/02/160218_s3_f3_kpz_1456k_p13v12.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+
+					<div class="video-overlay-x">
+						<div class="video-overlay-text-x">
+								✕
+						</div>
+					</div>
+					<div class="video-overlay">
+						<div class="video-overlay-text">
+								<h1>Kuttner plus Zwei</h1>
+								<h2>Staffel 3 - Folge 3</h2>
+						</div>
+					</div>
+		    		</div>
 
 				<div class="categories-container">
 					<div class="category">
@@ -433,29 +450,6 @@
 						<!--/ popuplar docu -->
 
 
-
-						<!-- video player -->
-						<div id="video-player" class="video-player">
-							<div class="title">Recommended Videos</div>
-							<div class="player">
-								<iframe src="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0"></iframe>
-							</div>
-							<div class="playlist">
-								<ul>
-									<li>
-										<a href="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0" class="active" style="background-image: url(pic/video-player/item-1.jpg)"><span>Consectetur adipisicing elit, sed do eiusmod tempor</span><i class="fa fa-play"></i></a>
-									</li>
-									<li>
-										<a href="https://player.vimeo.com/video/115014610?color=ffcc3a" style="background-image: url(pic/video-player/item-2.jpg)"><span>Laboris nisi ut aliquip ex ea commodo consequat</span><i class="fa fa-play"></i></a>
-									</li>
-									<li>
-										<a href="https://www.youtube.com/embed/fkvNSXNLV1g?showinfo=0" style="background-image: url(pic/video-player/item-3.jpg)"><span>Sed do eiusmod tempor incididunt ut labore et dolore</span><i class="fa fa-play"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<!--/ video player -->
-					</div>
 				</div>
 			</main>
 			<!--/ page content -->

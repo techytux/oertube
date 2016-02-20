@@ -63,14 +63,14 @@ def rate(video_id, rating, item_id=None):
 @app.route('/ratings')
 def ratings():
     ratings_json = get_ratings()
-    return json_util.dumps(ratings_json) # lists_json
+    return Response(json_util.dumps(ratings_json), mimetype="application/json") # lists_json
 
 # might not be used anymore
 @app.route('/get-video/<video_id>')
 def get_video(video_id):
     video_dict = get_video_by_id(video_id)
     result_json = {"result": "success", 'data': video_dict['online']}
-    return json_util.dumps(result_json)
+    return Response(json_util.dumps(result_json), mimetype="application/json") # lists_json
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')
