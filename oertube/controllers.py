@@ -70,7 +70,7 @@ def ratings():
 def get_video(video_id):
     video_dict = get_video_by_id(video_id)
     result_json = {"result": "success", 'data': video_dict['online']}
-    return json_util.dumps(result_json)
+    return Response(json_util.dumps(result_json), mimetype="application/json") # lists_json
 
 # special file handlers and error handlers
 @app.route('/favicon.ico')
