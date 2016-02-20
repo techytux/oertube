@@ -312,6 +312,8 @@ h1.mainTitle {
     font-family: 'Allerta Stencil', sans-serif;
     font-weight: normal;
     font-size:50px;
+    opacity:1;
+    transition: opacity 0.5s ease;
 }
 
 h1.mainTitle small {
@@ -320,3 +322,6 @@ h1.mainTitle small {
     font-size:40px;
 }
 
+main.zoom h1.mainTitle {
+    opacity:0;
+}
