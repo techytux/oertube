@@ -58,6 +58,11 @@ def rate(video_id, rating, item_id=None):
     list_json = save_rating(video_id, rating)
     return jsonify(list_json) # lists_json
 
+@app.route('/ratings')
+def ratings():
+    ratings_json = get_ratings()
+    return jsonify(ratings_json) # lists_json
+
 
 
 
