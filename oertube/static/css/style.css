@@ -47,8 +47,12 @@ main .zoomer {
 }
 
 main.zoom .zoomer {
-    transform: scale(2.874692875);
     transition: transform .5s ease;
+}
+
+main.zoom.withOrigin .zoomer
+{
+    transition: all .5s ease;
 }
 
 main .categories-container {
@@ -119,8 +123,8 @@ main.zoom .categories-container .category {
 
 main .popular-news .items { transition:margin .3s ease; }
 
-main .popular-news .items:hover { margin-left:-335px}
-main.zoom .popular-news .items:hover { margin-left:0px}
+main .popular-news .items:hover { margin-left:-335px }
+main.zoom .popular-news .items:hover { margin-left:0px }
 
 main .popular-news .items a { transition:width .3s ease }
 

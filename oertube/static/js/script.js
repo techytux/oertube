@@ -2,7 +2,6 @@ var teaserWidth  = 407;
 var teaserHeight = 229;
 var teaserMargin = 40;
 
-var scale = 2.874692875;
 var zielX = 373;
 var zielY = 193;
 var zielHeightAndMargin = 773;
@@ -13,24 +12,71 @@ var baseOffsetY = zielY;
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
 	for(var element in elements) {
-		elements[element].onclick = function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var indexY = $(this).parent().parent().index(".popular-news");
-			
-
-			if($("main").hasClass("zoom")) {
-				$("main").removeClass("zoom");
-				$("main .categories-container").css("margin-top", "0px");
-			} else {
-				var indexX = $(this).index();
-				$("main .zoomer").css("transform-origin", "" + getOffsetX(indexX) + "px " + getOffsetY(indexY) + "px")
-				$("main").addClass("zoom");
-				$("main .categories-container").css("margin-top", "-" + getMarginY(indexY) + "px");
-			}
-		};
+		registerClickEvent(elements[element]);
 	}
 }
+
+function registerClickEvent(a)
+{
+	a.onclick = function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+
+		if($("main").hasClass("zoom"))
+		{
+			zoomHalfTo(a);
+		}
+		else
+		{	
+			zoomFullTo(a);
+		}
+	};
+}
+
+function zoomHalfTo(a)
+{
+	var zoomFactor = 1170.0 / teaserWidth;
+	zoomTo(a, zoomFactor, zielX, zielY);
+}
+
+function zoomFullTo(a)
+{
+	var zoomFactor = 1920.0 / teaserWidth;
+	zoomTo(a, zoomFactor, 0, 0);
+}
+
+
+function zoomTo(a, zoomFactor, destX, destY)
+{
+	var indexX = $(a).index();
+	var indexY = $(a).parent().parent().index(".popular-news");
+	$("main .zoomer").css("transform-origin", "" + getOffsetX(indexX, destX, zoomFactor) + "px " + getOffsetY(indexY, destY, zoomFactor) + "px")
+	$("main .categories-container").css("margin-top", "-" + getMarginY(indexY) + "px");
+	$("main .zoomer").css("transform", "scale(" + zoomFactor + ")");	
+
+
+	if(!$("main").hasClass("zoom")) {
+		$("main").addClass("zoom");
+	}
+	else
+	{
+		if(!$("main").hasClass("withOrigin")) {
+			$("main").addClass("withOrigin");
+		}
+	}
+}
+
+function zoomOut()
+{
+	if($("main").hasClass("zoom")) {
+		$("main").removeClass("zoom");
+		$("main .categories-container").css("margin-top", "0px");
+		$("main .zoomer").css("transform", "scale(1)");	
+	}
+}
+
+
+
 
 function getStartX(indexX) {
 	return (indexX*(teaserWidth+teaserMargin)) + baseOffsetX;
@@ -44,10 +90,10 @@ function getMarginY(indexY) {
 	return indexY*zielHeightAndMargin;
 }
 
-function getOffsetX(indexX) {
-	return (zielX - (getStartX(indexX)*scale)) / (1-scale);
+function getOffsetX(indexX, destX, zoomFactor) {
+	return (destX - (getStartX(indexX)*zoomFactor)) / (1-zoomFactor);
 }
 
-function getOffsetY(indexY) {
-	return (zielY - (getStartY(indexY)*scale)) / (1-scale);
+function getOffsetY(indexY, destY, zoomFactor) {
+	return (destY - (getStartY(indexY)*zoomFactor)) / (1-zoomFactor);
 }
