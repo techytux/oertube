@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en" ng-app="AngularFlask">
+<!-- <head>
+	<meta charset="utf-8">
+	<title>AngularFlask</title>
+
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/main.css">
+
+	<script src="/static/lib/angular/angular.js"></script>
+	<script src="/static/lib/angular/angular-resource.js"></script>
+
+	<script src="/static/js/app.js"></script>
+	<script src="/static/js/controllers.js"></script>
+ 	<script src="/static/js/services.js"></script>
+
+	<script src="/static/lib/jquery/jquery.min.js"></script>
+	<script src="/static/lib/bootstrap/bootstrap.min.js"></script>
+</head> -->
+<head>
+		<title>mplayer</title>
+
+		<!-- metas -->
+		<meta charset="utf-8">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<!--/ metas -->
+
+		<!-- styles -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/owl.carousel.css">
+		<link rel="stylesheet" href="/static/css/main.css">
+		<!--/ styles -->
+
+</style></head>
+<!-- <body>
+	<div id="header" class="header navbar navbar-static-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				</button>
+				<a class="brand" href="/">My player</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="">
+							<a href="/">Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container page">
+		<div id="content" class="container main" ng-view>
+		</div>
+
+		<hr>
+		<footer id="footer" class="footer">
+			<div class="footer-left">
+				<a href="/about">About</a> |
+				<a href="/">Home</a>
+			</div>
+			<div class="footer-right">
+				<span>&copy; 2013 AngularFlask</span>
+			</div>
+		</footer>
+	</div>
+</body> -->
+<body cz-shortcut-listen="true">
+		<!-- page -->
+		<div class="page">
+
+			<!-- page header -->
+			<header class="page-header">
+
+				<!-- page header top -->
+				<div class="page-header-top">
+
+					<div class="grid-cont">
+						<div class="grid-row">
+							<div class="grid-col grid-col-2">
+								<!-- slogan -->
+								<a href="index.php" class="slogan"><span>Mzine.</span></a>
+								<!--/ slogan -->
+							</div>
+
+							<div class="grid-col grid-col-10">
+								<!-- secondary nav -->
+								<nav class="secondary-nav">
+									<ul>
+										<li>
+											<a href="index.php" class="active">home</a>
+										</li>
+										<li>
+											<a href="blog-list.php">blog</a>
+										</li>
+										<li>
+											<a href="contacts.php">contacts</a>
+										</li>
+										<li>
+											<a href="http://themeforest.net/item/mzine-magazine-blog-news-responsive-html-template/10036346" class="alt">buy theme</a>
+										</li>
+									</ul>
+								</nav>
+								<!--/ secondary nav -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- page header top -->
+
+				<!-- page header middle -->
+				<div class="page-header-middle fixed">
+
+					<div class="grid-cont">
+						<div class="grid-row">
+							<div class="grid-col grid-col-2">
+								<!-- logo -->
+								<a href="index.php" class="logo"><img src="pic/logo.png" width="68" height="61" alt=""></a>
+								<!--/ logo -->
+							</div>
+
+							<div class="grid-col grid-col-7">
+								<!-- main nav -->
+								<nav id="main-nav" class="main-nav">
+									<a href="#" class="switcher"><i class="fa fa-bars"></i></a>
+									<ul>
+										<li class="has-dropdown">
+											<a href="#">world</a>
+											<div class="dropdown dropdown-large">
+												<div class="grid-row">
+													<div class="grid-col grid-col-3">
+														<ul class="subnav">
+															<li class="icon"><i class="fa fa-globe"></i></li>
+															<li><a href="#">Asia</a></li>
+															<li><a href="#">America</a></li>
+															<li><a href="#">Africa</a></li>
+															<li><a href="#">Europe</a></li>
+															<li><a href="#">Latin America</a></li>
+														</ul>
+													</div>
+													<div class="grid-col grid-col-9">
+														<div class="latest">
+															<p>
+																<a href="#" class="fa fa-chevron-right next"></a>
+																<a href="#" class="fa fa-chevron-left prev"></a>
+																Latest posts in category
+															</p>
+															<div class="carousel owl-carousel owl-theme" style="opacity: 1; display: block;">
+																<div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2940px; left: 0px; display: block; transition: all 0ms ease; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-1.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-2.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-1.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-2.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-1.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div><div class="owl-item" style="width: 245px;"><div class="item">
+																	<a href="#" style="background-image: url(pic/main-nav/item-2.jpg)">
+																		<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+																		<div><i class="fa fa-comment"></i>124 Comments</div>
+																	</a>
+																</div></div></div></div>
+
+
+
+
+
+															<div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="has-dropdown has-dropdown-alt">
+											<a href="#">business</a>
+											<div class="dropdown dropdown-xlarge">
+												<div class="latest latest-alt">
+													<div class="item">
+														<a href="#" style="background-image: url(pic/main-nav/item-3.jpg)">
+															<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+															<div><i class="fa fa-comment"></i>124 Comments</div>
+														</a>
+													</div><!--
+													--><div class="item">
+														<a href="#" style="background-image: url(pic/main-nav/item-4.jpg)">
+															<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+															<div><i class="fa fa-comment"></i>124 Comments</div>
+														</a>
+													</div><!--
+													--><div class="item">
+														<a href="#" style="background-image: url(pic/main-nav/item-3.jpg)">
+															<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+															<div><i class="fa fa-comment"></i>124 Comments</div>
+														</a>
+													</div><!--
+													--><div class="item">
+														<a href="#" style="background-image: url(pic/main-nav/item-4.jpg)">
+															<h4>Lorem ipsum dolor sit amet seco laopir</h4>
+															<div><i class="fa fa-comment"></i>124 Comments</div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="has-dropdown">
+											<a href="#">pages</a>
+											<div class="dropdown">
+												<ul class="subnav">
+													<li><a href="index.php">Magazine layout</a></li>
+													<li><a href="index-alt.php">Classic Blog layout</a></li>
+													<li><a href="blog-author.php">Author page</a></li>
+													<li><a href="page-404.php">404 page</a></li>
+													<li><a href="contacts.php">Contacts</a></li>
+													<li class="has-dropdown">
+														<a href="#"><i class="fa fa-chevron-right"></i>Dropdown</a>
+														<div class="dropdown dropdown-left">
+															<ul class="subnav">
+																<li><a href="#">Item 1</a></li>
+																<li><a href="#">Item 2</a></li>
+																<li><a href="#">Item 3</a></li>
+															</ul>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="has-dropdown">
+											<a href="#">blog</a>
+											<div class="dropdown">
+												<ul class="subnav">
+													<li><a href="blog-list.php">List (1 col)</a></li>
+													<li><a href="blog-grid-2.php">Grid (2 cols)</a></li>
+													<li><a href="blog-grid-3.php">Grid (3 cols)</a></li>
+													<li><a href="blog-grid-4.php">Grid (4 cols)</a></li>
+													<li><a href="blog-author.php">Author page</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="has-dropdown">
+											<a href="#">posts</a>
+											<div class="dropdown">
+												<ul class="subnav">
+													<li><a href="blog-post.php">Regular</a></li>
+													<li><a href="blog-post-audio.php">Audio</a></li>
+													<li><a href="blog-post-gallery.php">Gallery</a></li>
+													<li><a href="blog-post-vimeo.php">Video (vimeo)</a></li>
+													<li><a href="blog-post-youtube.php">Video (youtube)</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</nav>
+								<!--/ main nav -->
+							</div>
+
+							<div class="grid-col grid-col-3">
+								<!-- search -->
+								<form action="#" class="search">
+									<input type="text" placeholder="search">
+									<button type="submit" class="fa fa-search"></button>
+								</form>
+								<!--/ search -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div></div>
+				<!-- page header middle -->
+
+				<!-- page header bottom -->
+				<div class="page-header-bottom">
+
+					<div class="grid-cont">
+						<!-- breaking news -->
+						<div class="breaking-news">
+							<div class="grid-row">
+								<div class="grid-col grid-col-2">
+									<p><strong>breaking</strong></p>
+								</div>
+
+								<div class="grid-col grid-col-10">
+									<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
+								</div>
+							</div>
+						</div>
+						<!--/ breaking news -->
+					</div>
+
+				</div>
+				<!-- page header bottom -->
+
+			</header>
+			<!--/ page header -->
+			<!-- page content -->
+			<main class="page-content">
+
+				<div class="grid-cont">
+					<!-- hot news -->
+					<div class="hot-news">
+						<div class="grid-row">
+							<div class="grid-col grid-col-12">
+								<a href="#">
+									<span class="pic" style="background-image: url(pic/hot-news/item-1.jpg)"></span>
+									<h5>World</h5>
+									<h2>Lorem Ipsum gravida nibh vel velit auctor</h2>
+									<i class="fa fa-share fa-flip-vertical"></i>
+								</a>
+							</div>
+
+							<div class="grid-col grid-col-6">
+								<a href="#" class="large">
+									<span class="pic" style="background-image: url(pic/hot-news/item-2.jpg)"></span>
+									<h5>Business</h5>
+									<h2>Lorem Ipsum gravida. nibh vel velit auctor aliquet</h2>
+									<i class="fa fa-share fa-flip-vertical"></i>
+								</a>
+							</div>
+
+							<div class="grid-col grid-col-6">
+								<a href="#" class="small">
+									<span class="pic" style="background-image: url(pic/hot-news/item-3.jpg)"></span>
+									<h5>Sports</h5>
+									<h3>Lorem Ipsum gravida nibh vel velit auctor</h3>
+									<i class="fa fa-share fa-flip-vertical"></i>
+								</a>
+							</div>
+
+							<div class="grid-col grid-col-3">
+								<a href="#" class="small">
+									<span class="pic" style="background-image: url(pic/hot-news/item-4.jpg)"></span>
+									<h5>Tech</h5>
+									<h4>Lorem Ipsum gravida nibh vel</h4>
+									<small><i class="fa fa-share fa-flip-vertical"></i></small>
+								</a>
+							</div>
+
+							<div class="grid-col grid-col-3">
+								<a href="#" class="small">
+									<span class="pic" style="background-image: url(pic/hot-news/item-5.jpg)"></span>
+									<h5>Finance</h5>
+									<h4>Lorem Ipsum gravida nibh vel</h4>
+									<small><i class="fa fa-share fa-flip-vertical"></i></small>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--/ hot news -->
+
+					<!-- popuplar news -->
+					<div id="popular-news" class="popular-news">
+						<div class="tabs">
+							<a href="#popuplar-news-1" class="active">popular</a>
+							<a href="#popuplar-news-2">recent</a>
+							<a href="#popuplar-news-3">reviewed</a>
+						</div>
+						<div id="popuplar-news-1" class="items items-visible">
+							<a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a>
+						</div>
+						<div id="popuplar-news-2" class="items">
+							<a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a>
+						</div>
+						<div id="popuplar-news-3" class="items">
+							<a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-3.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-1.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a><!--
+							--><a href="#">
+								<div class="pic" style="background-image: url(pic/popular-news/item-2.jpg)"></div>
+								<span>This is Photoshop version  of Lorem Ipsum</span>
+							</a>
+						</div>
+						<a href="#" class="fa fa-chevron-right"></a>
+					</div>
+					<!--/ popuplar news -->
+
+					<div class="grid-row">
+						<div class="grid-col grid-col-8">
+							<!-- recent news -->
+							<div id="recent-news" class="recent-news">
+								<div class="tabs clearfix">
+									<a href="#" class="all">all</a>
+									<a href="#recent-news-1" class="active">world</a>
+									<a href="#recent-news-2">finance</a>
+									<a href="#recent-news-3">sports</a>
+									<a href="#recent-news-4">business</a>
+									<a href="#recent-news-5">fashion</a>
+								</div>
+
+								<div id="recent-news-1" class="items items-visible">
+									<div class="item item-large">
+										<a href="#" class="pic" style="background-image: url(pic/recent-news/item-1.jpg)"></a>
+										<div class="info">
+											<h3><a href="#">Ut enim ad minim veniam, quis nostrud</a></h3>
+											<div class="date">19 Mar, 2014</div>
+											<div class="comments"><i class="fa fa-comment"></i>14</div>
+										</div>
+									</div>
+
+									<div class="item item-large">
+										<a href="#" class="pic" style="background-image: url(pic/recent-news/item-2.jpg)"></a>
+										<div class="info">
+											<h3><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h3>
+											<div class="date">17 Mar, 2014</div>
+											<div class="comments"><i class="fa fa-comment"></i>23</div>
+										</div>
+									</div>
+
+
+
+
+
+
+								</div>
+
+								<div id="recent-news-2" class="items">
+									<div class="item item-large">
+										<a href="#" class="pic" style="background-image: url(pic/recent-news/item-2.jpg)"></a>
+										<div class="info">
+											<h3><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h3>
+											<div class="date">17 Mar, 2014</div>
+											<div class="comments"><i class="fa fa-comment"></i>23</div>
+										</div>
+									</div>
+
+									<div class="item item-large">
+										<a href="#" class="pic" style="background-image: url(pic/recent-news/item-1.jpg)"></a>
+										<div class="info">
+											<h3><a href="#">Ut enim ad minim veniam, quis nostrud</a></h3>
+											<div class="date">19 Mar, 2014</div>
+											<div class="comments"><i class="fa fa-comment"></i>14</div>
+										</div>
+									</div>
+
+
+
+
+
+
+								</div>
+							</div>
+							<!--/ recent news -->
+						</div>
+
+						<div class="grid-col grid-col-4">
+
+
+
+
+
+
+						</div>
+					</div>
+
+					<!-- video player -->
+					<div id="video-player" class="video-player">
+						<div class="title">Recommended Videos</div>
+						<div class="player">
+							<iframe src="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0"></iframe>
+						</div>
+						<div class="playlist">
+							<ul>
+								<li>
+									<a href="https://www.youtube.com/embed/uMowbtGm7js?showinfo=0" class="active" style="background-image: url(pic/video-player/item-1.jpg)"><span>Consectetur adipisicing elit, sed do eiusmod tempor</span><i class="fa fa-play"></i></a>
+								</li>
+								<li>
+									<a href="https://player.vimeo.com/video/115014610?color=ffcc3a" style="background-image: url(pic/video-player/item-2.jpg)"><span>Laboris nisi ut aliquip ex ea commodo consequat</span><i class="fa fa-play"></i></a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/embed/fkvNSXNLV1g?showinfo=0" style="background-image: url(pic/video-player/item-3.jpg)"><span>Sed do eiusmod tempor incididunt ut labore et dolore</span><i class="fa fa-play"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--/ video player -->
+				</div>
+
+			</main>
+			<!--/ page content -->
+
+			<!-- page footer -->
+			<footer class="page-footer">
+				
+			</footer>
+			<!--/ page footer -->
+
+			<button type="button" id="scroll-top" class="scroll-top fa fa-chevron-up visible"></button>
+		</div>
+		<!--/ page -->
+
+		<!-- scripts -->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/jquery.form.min.js"></script>
+		<script src="js/main.js"></script>
+		<!--/ scripts -->
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
