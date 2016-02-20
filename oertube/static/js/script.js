@@ -20,7 +20,7 @@ function makeZoomable(rowClass) {
 				$("main").removeClass("zoom");
 			} else {
 				var indexX = $(this).index();
-				var indexY = $(this).parent().parent().index(".popular-news"); // TODO .popular-news
+				var indexY = $(this).parent().parent().index(".popular-news");
 				$("main").css("transform-origin", "" + getOffsetX(indexX) + "px " + getOffsetY(indexY) + "px")
 				$("main").addClass("zoom");
 			}
