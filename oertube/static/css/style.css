@@ -232,3 +232,38 @@ footer,
     right: 45px;
     top: 5px;
 }
+
+
+.stars_div{
+    display: none;
+    background-color: black;
+    opacity: .60;
+
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 30%;
+    left: 50px;
+
+    padding-left: 3%;
+    padding-top: 3%;
+
+    font-size: 60%;
+}
+
+.star{
+    float: left;
+    margin-top: 3%;
+    width: 25%;
+    height: 40%;
+    background-image: url("/static/img/star_non_selected.png");
+    background-size: 100%;
+}
+
+.star:hover{
+    margin-top: 3%;
+    width: 25%;
+    height: 40%;
+    background-image: url("/static/img/star_selected.png");
+    background-size: 100%;
+}
