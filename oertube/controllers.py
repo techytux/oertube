@@ -63,7 +63,7 @@ def rate(video_id, rating, item_id=None):
 @app.route('/ratings')
 def ratings():
     ratings_json = get_ratings()
-    return json_util.dumps(ratings_json) # lists_json
+    return Response(json_util.dumps(ratings_json), mimetype="application/json") # lists_json
 
 # might not be used anymore
 @app.route('/get-video/<video_id>')
