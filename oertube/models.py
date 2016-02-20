@@ -32,8 +32,12 @@ app.config['CRUD_URL_MODELS'] = {'post': Post}
 
 
 def get_lists_json():
-    print "Here we are!"
     lists_text = urllib.urlopen("http://editorial.mixd.tv/puls-highlights").read()
     lists_json = json.loads(lists_text)
-
     return lists_json
+
+def get_list_json(list_name):
+    print "LIST:" + list_name
+    list_text = urllib.urlopen("http://editorial.mixd.tv/highlights/" + list_name).read()
+    list_json = json.loads(list_text)
+    return list_json
