@@ -11,6 +11,7 @@ var baseOffsetY = zielY;
 
 var currentVideoA;
 var videoPlayer;
+var isVideoPlaying = false;
 
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
@@ -19,10 +20,61 @@ function makeZoomable(rowClass) {
 	}
 }
 
+var space = false;
+$(function() {
+  $(document).keyup(function(evt) {
+    if (evt.keyCode == 32) {
+      	space = false;
+    }
+  }).keydown(function(evt) {
+    if (evt.keyCode == 32) {
+      space = true;
+	  if (isVideoPlaying){
+		  videoPlayer.pause()
+		  isVideoPlaying = false
+	  } else {
+		  unpauseVideo(currentVideoA)
+		  isVideoPlaying = true
+	  }
+    }
+  });
+})
+
+
+function onVideoClick(){
+	videoPlayer.pause()
+}
+
 function onVideoPause(){
 	$('.video-container').css("z-index", "-1");
 	zoomHalfTo(currentVideoA)
 }
+
+function playVideo(a){
+		var MP4Link = a.href;
+		var description = $(a).find($("span p")).text();
+		videoPlayer = $('.videoPlayer')[0];
+
+		$('.video-container').css("z-index", "100");
+		videoPlayer.src = MP4Link
+
+		videoPlayer.onpause = onVideoPause
+
+		$('.video-overlay-h1').text(description)
+}
+
+function unpauseVideo(a){
+		var description = $(a).find($("span p")).text();
+		videoPlayer = $('.videoPlayer')[0];
+
+		$('.video-container').css("z-index", "100");
+		videoPlayer.play();
+
+		videoPlayer.onpause = onVideoPause
+
+		$('.video-overlay-h1').text(description)
+}
+
 
 function registerClickEvent(a)
 {
@@ -38,23 +90,7 @@ function registerClickEvent(a)
 		{
 			zoomFullTo(a);
 			currentVideoA = a
-			function playVideo(){
-					var MP4Link = a.href;
-					console.log($(a))
-					var description = $(a).find($("span p")).text();
-					console.log("DESC" + description)
-					videoPlayer = $('.videoPlayer')[0];
-
-					$('.video-container').css("z-index", "100");
-					videoPlayer.src = MP4Link
-					// videoPlayer.load();
-			        // videoPlayer.play();
-
-					videoPlayer.onpause = onVideoPause
-					
-					$('.video-overlay-h1').text(description)
-			}
-
+			playVideo(currentVideoA)
 			setTimeout(playVideo, 600)
 		}
 	};
