@@ -61,7 +61,7 @@ main.zoom.withOrigin .zoomer
 main .categories-container {
     position:absolute;
     left:0; width:100%; top:0;
-    padding: 193px 0 0 40px;
+    padding: 193px 0 0 70px;
     transition: margin .5s ease;
 }
 
@@ -75,6 +75,8 @@ main .categories-container .category {
 main .categories-container .category span.title {
    display:block; position:absolute; left:0; top:0;
    margin:20px 0 0 0;
+   font-family: 'Allerta Stencil', sans-serif;
+   font-size:40px;
 }
 
 main .categories-container .category span.border {
@@ -115,7 +117,7 @@ main.zoom .categories-container .category {
 .popular-news .items a span {
 	opacity:0; display:block; position:absolute;
 	left:0; top:0; right:40px; bottom:40px;
-	padding:40px 40px 40px 300px;
+	padding:40px 40px 40px 270px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.5+0,1+53,1+74,1+100 */
 	background: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 53%, rgba(0,0,0,1) 74%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 53%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -125,11 +127,11 @@ main.zoom .categories-container .category {
 	word-wrap:break-word; }
 
 main .popular-news .items { transition:margin .3s ease; }
-main .popular-news .items:hover { margin-left:-335px }
+main .popular-news .items:hover { margin-left:-305px }
 main.zoom .popular-news .items:hover { margin-left:0px; transition:margin .2s ease; }
 
 main .popular-news .items a { transition:width .3s ease }
-main .popular-news .items a:hover { width:782px; color:white; }
+main .popular-news .items a:hover { width:752px; color:white; }
 main.zoom .popular-news .items a:hover { width:447px; transition:width .2s ease  }
 
 main .popular-news .items a:hover span { opacity:1 }
