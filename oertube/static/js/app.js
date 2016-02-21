@@ -5,7 +5,6 @@ angular.module('AngularFlask', ['angularFlaskServices', 'angularFlaskControllers
 
 angular.module('angularFlaskControllers', []).
 	controller('indexController', function($scope, $http){
-		console.log('Hello');
 		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07771')
 		.then(function(response){
 			$scope.infoHighlights = response.data.msg.data;
