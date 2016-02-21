@@ -101,11 +101,11 @@ function playVideo(a){
 		videoPlayer = $('.videoPlayer')[0];
 
 		$('.video-container').css("z-index", "100");
-		videoPlayer.src = MP4Link
+		videoPlayer.src = MP4Link;
 
-		videoPlayer.onpause = onVideoPause
+		videoPlayer.onpause = onVideoPause;
 
-		$('.video-overlay-h1').text(description)
+		$('.video-overlay-h1').text(description);
 }
 
 function unpauseVideo(a){

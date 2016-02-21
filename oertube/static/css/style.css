@@ -347,6 +347,10 @@ footer,
     font-size: 200%;
 }
 
+video { position:absolute; left:0px; right:0px; top:0px; bottom:0px; }
+
+#video-background { position:absolute; background:black; left:-500px; top:-500px; right:-500px; bottom:-500px; }
+
 /* title */
 h1.mainTitle {
     position:absolute;
