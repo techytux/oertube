@@ -467,4 +467,20 @@ main.zoom .popular-news .items a.showDescription:hover span {
 	background:url('/static/img/arrow_right.png') center no-repeat;
 }
 
+#resolution 
+{ 
+	background:rgba(0,0,0,0.6);
+	color:white;
+	padding:40px;
+	width:500px;
+	height:40px;
+	position:absolute;
+	text-align:center;	
+	left:0px; top:0px; right:0px; bottom:0px; margin:auto;
+	z-index:1000;
+}
 
+@media (min-width:1910px) and (min-height:1070px)
+{
+	#resolution { display:none }
+}
