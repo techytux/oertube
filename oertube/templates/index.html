@@ -114,7 +114,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-1" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{docu.fileLocations[0].url}}" ng-repeat="docu in docuHighlights">
+								<a href="{{docu.fileLocations[0].url}}" ng-repeat="docu in docuHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{docu.image}})"></div>
 									<span>
 										<p>{{docu.name}}</p>
@@ -141,7 +141,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-2" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights">
+								<a href="{{comedy.fileLocations[0].url}}" ng-repeat="comedy in comedyHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{comedy.image}})"></div>
 									<span>
 										<p>{{comedy.name}}</p>
@@ -169,7 +169,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-3" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights">
+								<a href="{{movie.fileLocations[0].url}}" ng-repeat="movie in movieHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{movie.image}})"></div>
 									<span>
 										<p>{{movie.name}}</p>
@@ -196,7 +196,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-4" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights">
+								<a href="{{info.fileLocations[0].url}}" ng-repeat="info in infoHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{info.image}})"></div>
 									<span>
 										<p>{{info.name}}</p>
@@ -223,7 +223,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-5" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{series.fileLocations[0].url}}" ng-repeat="series in seriesHighlights">
+								<a href="{{series.fileLocations[0].url}}" ng-repeat="series in seriesHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{series.image}})"></div>
 									<span>
 										<p>{{series.name}}</p>
@@ -250,7 +250,7 @@
 							<a href="#" class="move-left"></a>
 							<div id="popular-6" class="popular-news" ng-controller="indexController">
 							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
-								<a href="{{reco.fileLocations[0].url}}" ng-repeat="reco in recommendationHighlights">
+								<a href="{{reco.fileLocations[0].url}}" ng-repeat="reco in recommendationHighlights" onclick="window.event.preventDefault()">
 									<div class="pic" style="background-image: url({{reco.image}})"></div>
 									<span>
 										<p>{{reco.name}}</p>
