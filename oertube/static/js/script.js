@@ -152,11 +152,21 @@ function onXClick(){
 	zoomOut()
 }
 
+function onZoomXClick(){
+	var content = $('.close_zoom_x');
+	content.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 20);
+
+	zoomOut();
+}
+
 function zoomHalfTo(a)
 {
 	var zoomFactor = 1170.0 / teaserWidth;
 	zoomTo(a, zoomFactor, zielX, zielY);
 	$(".stars_div").css("display", "block")
+
+	var content = $('.close_zoom_x');
+	content.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 1}, 20);
 }
 
 function zoomFullTo(a)
