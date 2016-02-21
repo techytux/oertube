@@ -305,6 +305,6 @@ function scrollDown() {
 
 function scrollHeadlineFading() {
     if(currentScrollOffset >= -80 && currentScrollOffset <= 0) {
-    	$(".mainTitle").css("opacity", ((currentScrollOffset+80)/80));
+    	$(".titleContainer").css("opacity", ((currentScrollOffset+80)/80));
     }
 }
