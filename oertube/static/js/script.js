@@ -92,7 +92,10 @@ function onVideoClick(){
 
 function onVideoPause(){
 	$('.video-container').css("z-index", "-1");
-	zoomHalfTo(currentVideoA, true)
+	if(isFullZoomed)
+	{
+		zoomHalfTo(currentVideoA, true);
+	}
 }
 
 function playVideo(a){
@@ -207,12 +210,16 @@ function mouseClick3() {
 }
 
 function onXClick(){
+	window.event.preventDefault();
+	window.event.stopPropagation();
 	$('.video-container').css("z-index", "-1");
 	videoPlayer.pause();
 	zoomOut();
 }
 
 function onZoomXClick(){
+	window.event.preventDefault();
+	window.event.stopPropagation();
 	var content = $('.close_zoom_x');
 	content.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 20);
 
