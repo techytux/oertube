@@ -242,7 +242,7 @@ main.zoom .popular-news .items a:hover span { opacity:0 }
 /* Logo */
 
 #floating-logo {
-    position:fixed;
+    position:absolute;
     right:20px;
     bottom:20px;
 }
@@ -292,14 +292,12 @@ footer,
 .video-overlay {
     position: absolute;
     bottom: 50px;
-    left:5%;
-    width:90%;
-    height: 15%;
-    background-color: black;
-    opacity: .60;
-    -moz-opacity: 0.60;
-    filter:alpha(opacity=60);
-
+    left:50px;
+    right:50px;
+    height: 120px;
+    top:auto;
+    background-color: rgba(0,0,0,0.6);
+    opacity:1;
     visibility: visible;
     transition: opacity 0.7s linear;
 }
@@ -312,10 +310,7 @@ footer,
 
 
 .video-overlay-text {
-    position: absolute;
-    left: 5%;
-    width: 90%;
-    height: 12%;
+    padding:20px;
     color: white;
 }
 
@@ -378,8 +373,8 @@ main.zoom h1.mainTitle {
 
 .stars_div{
     display: none;
-    background-color: black;
-    opacity: .60;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 1;
 
     position: absolute;
     width: 25%;
@@ -390,8 +385,33 @@ main.zoom h1.mainTitle {
     padding-left: 3%;
     padding-top: 3%;
 
-    font-size: 60%;
+    font-size: 14.5px;
 }
+
+a.showStars .stars_div {
+    display:block;
+}
+
+main.zoom .popular-news .items a.showDescription span {
+    opacity:1;
+    position:absolute;
+    background:rgba(0,0,0,0.6);
+    left:20px; bottom:60px; right:60px; top:130px;
+    height:auto; width:auto;
+    font-size:11px;
+    margin:0px;
+    padding:10px;
+}
+
+main.zoom .popular-news .items a.showDescription span p,
+main.zoom .popular-news .items a.showDescription span small {
+    width:320px;
+}
+
+main.zoom .popular-news .items a.showDescription:hover span {
+    opacity:1;
+}
+
 
 .star{
     float: left;
@@ -401,6 +421,23 @@ main.zoom h1.mainTitle {
     background-image: url("/static/img/star_non_selected.png");
     background-size: 100%;
 }
+
+
+#blocker1, #blocker2, #blocker3, #blocker4 {
+	background:black;
+	position:absolute;
+	left:-1000px;
+	top:-1000px;
+	right:-1000px;
+	bottom:-1000px;
+	z-index:1000;
+}
+
+#blocker1 { top:1080px; }
+#blocker2 { bottom:1080px;  }
+#blocker3 { left:1920px; }
+#blocker4 { right:1920px;}
+
 
 /* horizontal scrollen */
 .move-left {

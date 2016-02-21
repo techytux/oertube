@@ -20,6 +20,11 @@ var selectedStart = 0;
 
 var currentColumn = Array(0,0,0,0,0,0,0,0,0);
 
+var currentIndexX = 0;
+var currentIndexY = 0;
+var isHalfZoomed = false;
+var isFullZoomed = false;
+
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
 	for(var element in elements) {
@@ -55,7 +60,9 @@ function makeArrows()
 
 var space = false;
 $(function() {
+
   makeArrows();
+
   $(document).keyup(function(evt) {
     if (evt.keyCode == 32) {
       	space = false;
@@ -85,7 +92,7 @@ function onVideoClick(){
 
 function onVideoPause(){
 	$('.video-container').css("z-index", "-1");
-	zoomHalfTo(currentVideoA)
+	zoomHalfTo(currentVideoA, true)
 }
 
 function playVideo(a){
@@ -125,15 +132,27 @@ function registerClickEvent(a)
 
 		if($("main").hasClass("zoom"))
 		{
-			zoomHalfTo(a);
+			zoomHalfTo(a, false);
 		}
 		else
 		{
-			zoomFullTo(a);
-			currentVideoA = a
-			setTimeout(playVideoTimeout, 600)
+			showVideo(a);
 		}
 	};
+}
+
+function showVideo(a)
+{
+	zoomFullTo(a);
+	currentVideoA = a;
+	setTimeout(playVideoTimeout, 600);
+}
+
+function goToNextVideo()
+{
+	currentColumn[currentIndexY] = currentColumn[currentIndexY] + 1;
+	adjustColumn($(currentVideoA).parent().parent());
+	showVideo($(currentVideoA).parent().parent().find("a").get(currentColumn[currentIndexY]));
 }
 
 function mouseOverStar1(){
@@ -155,7 +174,10 @@ function mouseOverStar3(){
 }
 
 function mouseClick1() {
+	window.event.preventDefault();
+	window.event.stopPropagation();
 	var clickedEntityId = $('#entityIdSpan').text();
+	goToNextVideo();
 	$.ajax({
 		type: "GET",
 		url: "/rate/" + clickedEntityId + "/1"
@@ -163,7 +185,10 @@ function mouseClick1() {
 }
 
 function mouseClick2() {
+	window.event.preventDefault();
+	window.event.stopPropagation();
 	var clickedEntityId = $('#entityIdSpan').text();
+	goToNextVideo();
 	$.ajax({
 		type: "GET",
 		url: "/rate/" + clickedEntityId + "/2"
@@ -171,7 +196,10 @@ function mouseClick2() {
 }
 
 function mouseClick3() {
+	window.event.preventDefault();
+	window.event.stopPropagation();
 	var clickedEntityId = $('#entityIdSpan').text();
+	goToNextVideo();
 	$.ajax({
 		type: "GET",
 		url: "/rate/" + clickedEntityId + "/3"
@@ -181,7 +209,7 @@ function mouseClick3() {
 function onXClick(){
 	$('.video-container').css("z-index", "-1");
 	videoPlayer.pause();
-	zoomOut()
+	zoomOut();
 }
 
 function onZoomXClick(){
@@ -191,20 +219,59 @@ function onZoomXClick(){
 	zoomOut();
 }
 
-function zoomHalfTo(a)
+function zoomHalfTo(a, showStars)
 {
+	var indexX = $(a).index();
+	var indexY = $(a).parent().parent().index(".popular-news");
+
+	if(indexX == currentIndexX && indexY == currentIndexY
+	   && isHalfZoomed)
+	{
+		showVideo(a);
+		return;
+	}
+
+	isHalfZoomed = true;
+	isFullZoomed = false;
+
 	var zoomFactor = 1170.0 / teaserWidth;
 	zoomTo(a, zoomFactor, zielX, zielY);
-	$(".stars_div").css("display", "block")
+
+	if(showStars)
+	{
+		if(!$(a).hasClass("showStars"))
+		{
+			$(a).addClass("showStars");
+		}
+		$(a).removeClass("showDescription");
+	}
+	else
+	{
+		$(a).removeClass("showStars");
+		if(!$(a).hasClass("showDescription"))
+		{
+			$(a).addClass("showDescription");
+		}
+	}
 
 	var content = $('.close_zoom_x');
 	content.css({opacity: 1.0, visibility: "visible"}).animate({opacity: 1}, 20);
+	
+
 }
 
 function zoomFullTo(a)
 {
 	var zoomFactor = 1920.0 / teaserWidth;
 	zoomTo(a, zoomFactor, 0, 0);
+
+	$(".popular-news .items a").removeClass("showStars");
+	$(".popular-news .items a").removeClass("showDescription");
+
+
+	isHalfZoomed = false;
+	isFullZoomed = true;
+
 }
 
 
@@ -212,6 +279,9 @@ function zoomTo(a, zoomFactor, destX, destY)
 {
 	var indexX = $(a).index();
 	var indexY = $(a).parent().parent().index(".popular-news");
+
+	currentIndexX = indexX;
+	currentIndexY = indexY;
 
 	if(indexX != currentColumn[indexY])
 	{
@@ -242,6 +312,10 @@ function zoomOut()
 		$("main .categories-container").css("margin-top", "0px");
 		$("main .zoomer").css("transform", "scale(1)");
 	}
+	$(".popular-news .items a").removeClass("showStars");
+	$(".popular-news .items a").removeClass("showDescription");
+	isHalfZoomed = false;
+	isFullZoomed = false;
 }
 
 
