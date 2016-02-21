@@ -47,7 +47,7 @@
 
 			<!-- page content -->
 			<main class="page-content">
-				<h1 class="mainTitle">Guten Abend, Lisa! <small>Was möchtest du heute schauen?</small></h1> 
+				<h1 class="mainTitle">Guten Abend, Lisa! <small>Was möchtest du heute schauen?</small></h1>
 
 
 				<div id="video-container" class="col-md-12 video-container" onmousemove="onVideoMouseMove()">
@@ -67,7 +67,7 @@
 								<h2 class="video-overlay-h2"></h2>
 						</div>
 					</div>
-	    			</div>	
+	    			</div>
 
 				<div class="categories-container">
 					<div class="category doku">
@@ -108,10 +108,11 @@
 									<div class="stars_div">
 										rate or wait!<br />
 										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
-										<div class="star"></div>
-										<div class="star"></div>
-										<div class="star"></div>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
 									</div>
+									<span id="entityIdSpan" style="display:none">{{docu.entityId}}</span>
 								</a>
 							</div>
 							</div>
@@ -131,8 +132,15 @@
 										<small>{{comedy.description}}</small>
 									</span>
 									<img class="broadcasterLogo" src={{comedy.broadcasterLogo}}>
+									<div class="stars_div">
+										rate or wait!<br />
+										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
+									</div>
+									<span id="entityIdSpan" style="display:none">{{comedy.entityId}}</span>
 								</a>
-
 							</div>
 							</div>
 							<a href="#" class="move-right"></a>
@@ -152,8 +160,15 @@
 										<small>{{movie.description}}</small>
 									</span>
 									<img class="broadcasterLogo" src={{movie.broadcasterLogo}}>
+									<div class="stars_div">
+										rate or wait!<br />
+										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
+									</div>
+									<span id="entityIdSpan" style="display:none">{{movie.entityId}}</span>
 								</a>
-
 							</div>
 							</div>
 							<a href="#" class="move-right"></a>
@@ -172,6 +187,14 @@
 										<small>{{info.description}}</small>
 									</span>
 									<img class="broadcasterLogo" src={{info.broadcasterLogo}}>
+									<div class="stars_div">
+										rate or wait!<br />
+										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
+									</div>
+									<span id="entityIdSpan" style="display:none">{{info.entityId}}</span>
 								</a>
 							</div>
 							</div>
@@ -191,14 +214,20 @@
 										<small>{{series.description}}</small>
 									</span>
 									<img class="broadcasterLogo" src={{series.broadcasterLogo}}>
+									<div class="stars_div">
+										rate or wait!<br />
+										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
+									</div>
+									<span id="entityIdSpan" style="display:none">{{series.entityId}}</span>
 								</a>
-
 							</div>
 							</div>
 							<a href="#" class="move-right"></a>
 						</div>
 						<!--/ popuplar series -->
-
 
 				</div>
 			</main>

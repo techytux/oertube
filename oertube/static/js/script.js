@@ -133,6 +133,48 @@ function registerClickEvent(a)
 	};
 }
 
+function mouseOverStar1(){
+	$('.deathstar').css("background-image", 'url("/static/img/star_selected.png")');
+	$('.moonstar').css("background-image", 'url("/static/img/star_non_selected.png")');
+	$('.daystar').css("background-image", 'url("/static/img/star_non_selected.png")');
+}
+
+function mouseOverStar2(){
+	$('.deathstar').css("background-image", 'url("/static/img/star_selected.png")');
+	$('.moonstar').css("background-image", 'url("/static/img/star_selected.png")');
+	$('.daystar').css("background-image", 'url("/static/img/star_non_selected.png")');
+}
+
+function mouseOverStar3(){
+	$('.deathstar').css("background-image", 'url("/static/img/star_selected.png")');
+	$('.moonstar').css("background-image", 'url("/static/img/star_selected.png")');
+	$('.daystar').css("background-image", 'url("/static/img/star_selected.png")');
+}
+
+function mouseClick1() {
+	var clickedEntityId = $('#entityIdSpan').text();
+	$.ajax({
+		type: "GET",
+		url: "/rate/" + clickedEntityId + "/1"
+	})
+}
+
+function mouseClick2() {
+	var clickedEntityId = $('#entityIdSpan').text();
+	$.ajax({
+		type: "GET",
+		url: "/rate/" + clickedEntityId + "/2"
+	})
+}
+
+function mouseClick3() {
+	var clickedEntityId = $('#entityIdSpan').text();
+	$.ajax({
+		type: "GET",
+		url: "/rate/" + clickedEntityId + "/3"
+	})
+}
+
 function onXClick(){
 	$('.video-container').css("z-index", "-1");
 	videoPlayer.pause();
