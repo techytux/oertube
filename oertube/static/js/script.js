@@ -11,6 +11,7 @@ var baseOffsetY = zielY;
 
 var scrollOffset = 20;
 var currentScrollOffset = 0;
+var maxScrollOffset = 0;
 
 var currentVideoA;
 var videoPlayer;
@@ -383,6 +384,7 @@ $(document).ready(function(){
 	    	scrollDown();
 	    }
 	});
+    maxScrollOffset = - ($(".around-popular").size()*(teaserHeight+teaserMargin)) - baseOffsetY + 1080;
 });
 
 function scollUp() {
@@ -396,7 +398,7 @@ function scollUp() {
 }
 
 function scrollDown() {
-	if($("main").hasClass("zoom")) {
+	if($("main").hasClass("zoom") || currentScrollOffset <= maxScrollOffset) {
 		return;
 	}
     $(".zoomer").css("top", $(".zoomer").position().top - scrollOffset);
