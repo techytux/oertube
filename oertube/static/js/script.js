@@ -15,6 +15,8 @@ var isVideoPlaying = false;
 
 var selectedStart = 0;
 
+var currentColumn = Array(0,0,0,0,0,0,0,0,0);
+
 function makeZoomable(rowClass) {
 	var elements = $(rowClass + " .items a").get();
 	for(var element in elements) {
@@ -22,8 +24,35 @@ function makeZoomable(rowClass) {
 	}
 }
 
+function makeArrows()
+{
+	$(".move-left").click(function(event)
+	{
+		event.preventDefault();
+		var indexY = $(this).parent().find(".popular-news").index(".popular-news");
+		currentColumn[indexY]--;
+		if(currentColumn[indexY] < 0)
+		{
+			currentColumn[indexY] = 0;	
+		}
+		adjustColumn($(this).parent().find(".popular-news"));
+	});
+	$(".move-right").click(function(event)
+	{
+		event.preventDefault();
+		var indexY = $(this).parent().find(".popular-news").index(".popular-news");
+		currentColumn[indexY]++;
+		if(currentColumn[indexY] > 7)
+		{
+			currentColumn[indexY] = 7;	
+		}
+		adjustColumn($(this).parent().find(".popular-news"));
+	});
+}
+
 var space = false;
 $(function() {
+  makeArrows();
   $(document).keyup(function(evt) {
     if (evt.keyCode == 32) {
       	space = false;
@@ -40,7 +69,7 @@ $(function() {
 	  }
     }
   });
-})
+});
 
 
 function mouseOverStar(){
@@ -128,6 +157,13 @@ function zoomTo(a, zoomFactor, destX, destY)
 {
 	var indexX = $(a).index();
 	var indexY = $(a).parent().parent().index(".popular-news");
+
+	if(indexX != currentColumn[indexY])
+	{
+		currentColumn[indexY] = indexX;
+		adjustColumn($(a).parent().parent());
+	}
+
 	$("main .zoomer").css("transform-origin", "" + getOffsetX(indexX, destX, zoomFactor) + "px " + getOffsetY(indexY, destY, zoomFactor) + "px")
 	$("main .categories-container").css("margin-top", "-" + getMarginY(indexY) + "px");
 	$("main .zoomer").css("transform", "scale(" + zoomFactor + ")");
@@ -154,11 +190,14 @@ function zoomOut()
 }
 
 
-
-
-function getStartX(indexX) {
-	return (indexX*(teaserWidth+teaserMargin)) + baseOffsetX;
+function adjustColumn(jQueryElement)
+{
+	var indexY = jQueryElement.index(".popular-news");
+	jQueryElement.find(".items").css("margin-left", (-currentColumn[indexY] * (teaserWidth + teaserMargin)) + "px");
+	jQueryElement.parent().find(".move-left").css("opacity", currentColumn[indexY] > 0 ? 1 : 0);
 }
+
+
 
 function getStartY(indexY) {
 	return (indexY*(teaserHeight+teaserMargin)) + baseOffsetY;
@@ -169,7 +208,7 @@ function getMarginY(indexY) {
 }
 
 function getOffsetX(indexX, destX, zoomFactor) {
-	return (destX - (getStartX(indexX)*zoomFactor)) / (1-zoomFactor);
+	return (destX - (baseOffsetX*zoomFactor)) / (1-zoomFactor);
 }
 
 function getOffsetY(indexY, destY, zoomFactor) {
