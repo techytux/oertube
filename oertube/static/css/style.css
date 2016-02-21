@@ -456,6 +456,18 @@ main.zoom .popular-news .items a.showDescription:hover span {
 	transition:opacity .3s ease;
 }
 
+#zoomed-move-left {
+	width:40px; 
+	position:absolute;
+	left:0px;
+	top:160px;
+	bottom:120px;
+	background:url('/static/img/arrow_left.png') center no-repeat;
+	transition:opacity .3s ease;
+	display:none;
+}
+
+
 /* horizontal scrollen */
 .move-right {
 	width:40px; 
