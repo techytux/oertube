@@ -42,7 +42,7 @@ BROADCASTER_TO_LOGO_DICT = {
     "FES": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Einsfestival_2009.svg/320px-Einsfestival_2009.svg.png",
     "RAB": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logo_Radio_Bremen_TV.svg/320px-Logo_Radio_Bremen_TV.svg.png",
     "KKA": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kika_2012.svg/320px-Kika_2012.svg.png",
-    "ART": "http://images.mixd.tv/images/320/",
+    "ART": "http://images.mixd.tv/images/320/art.png",
     "DW": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Deutsche_Welle_Logo.svg/320px-Deutsche_Welle_Logo.svg.png",
     "HF": "http://images.mixd.tv/images/320/hf.png",
     "MDR": "http://images.mixd.tv/images/320/mdr.png",

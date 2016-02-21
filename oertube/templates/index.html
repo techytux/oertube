@@ -101,9 +101,9 @@
 					<div class="category series">
 						<span class="title">Serie</span><span class="border" />
 					</div>
-					<!--<div class="category other">
-						<span class="title">Mal was anderes</span><span class="border" />
-					</div>-->
+					<div class="category other">
+						<span class="title">Mal was <br/>anderes</span><span class="border" />
+					</div>
 				</div>
 
 				<div class="zoomer">
@@ -245,6 +245,33 @@
 						</div>
 						<!--/ popuplar series -->
 
+						<!-- popuplar reco -->
+						<div class="around-popular">
+							<a href="#" class="move-left"></a>
+							<div id="popular-6" class="popular-news" ng-controller="indexController">
+							<div id="popuplar-news-1" class="items items-visible row row-horizon" >
+								<a href="{{reco.fileLocations[0].url}}" ng-repeat="reco in recommendationHighlights">
+									<div class="pic" style="background-image: url({{reco.image}})"></div>
+									<span>
+										<p>{{reco.name}}</p>
+										<small>{{reco.description}}</small>
+									</span>
+									<img class="broadcasterLogo" src={{reco.broadcasterLogo}}>
+									<div class="stars_div">
+										rate or wait!<br />
+										<p style="font-size:40%">Wie hat dir das Video gefallen?</p>
+										<div class="star deathstar" onmouseover="mouseOverStar1()" onclick="mouseClick1()"></div>
+										<div class="star moonstar" onmouseover="mouseOverStar2()" onclick="mouseClick2()"></div>
+										<div class="star daystar" onmouseover="mouseOverStar3()" onclick="mouseClick3()"></div>
+									</div>
+									<span id="entityIdSpan" style="display:none">{{reco.entityId}}</span>
+								</a>
+							</div>
+							</div>
+							<a href="#" class="move-right"></a>
+						</div>
+						<!--/ popuplar reco -->
+
 				</div>
 			</main>
 			<!--/ page content -->
@@ -269,6 +296,6 @@
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="/static/js/script.js"></script>
 		<!--/ scripts -->
-</body>	
+</body>
 
 </html>

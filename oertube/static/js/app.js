@@ -40,4 +40,11 @@ angular.module('angularFlaskControllers', []).
 			// console.log($scope.infoHighlights);
 			makeZoomable("#popular-5");
 		})
+
+		$http.get('/list/dbdef3c5-b589-566c-9cc4-19f521f07772')
+		.then(function(response){
+			$scope.recommendationHighlights = response.data.msg.data;
+			// console.log($scope.infoHighlights);
+			makeZoomable("#popular-6");
+		})
 	});
