@@ -9,6 +9,9 @@ var zielHeightAndMargin = 773;
 var baseOffsetX = zielX;
 var baseOffsetY = zielY;
 
+var scrollOffset = 20;
+var currentScrollOffset = 0;
+
 var currentVideoA;
 var videoPlayer;
 var isVideoPlaying = false;
@@ -206,7 +209,7 @@ function zoomTo(a, zoomFactor, destX, destY)
 		adjustColumn($(a).parent().parent());
 	}
 
-	$("main .zoomer").css("transform-origin", "" + getOffsetX(indexX, destX, zoomFactor) + "px " + getOffsetY(indexY, destY, zoomFactor) + "px")
+	$("main .zoomer").css("transform-origin", "" + getOffsetX(indexX, destX, zoomFactor) + "px " + (getOffsetY(indexY, destY, zoomFactor) - currentScrollOffset) + "px");
 	$("main .categories-container").css("margin-top", "-" + getMarginY(indexY) + "px");
 	$("main .zoomer").css("transform", "scale(" + zoomFactor + ")");
 
@@ -242,7 +245,7 @@ function adjustColumn(jQueryElement)
 
 
 function getStartY(indexY) {
-	return (indexY*(teaserHeight+teaserMargin)) + baseOffsetY;
+	return (indexY*(teaserHeight+teaserMargin)) + baseOffsetY + currentScrollOffset;
 }
 
 function getMarginY(indexY) {
@@ -255,4 +258,43 @@ function getOffsetX(indexX, destX, zoomFactor) {
 
 function getOffsetY(indexY, destY, zoomFactor) {
 	return (destY - (getStartY(indexY)*zoomFactor)) / (1-zoomFactor);
+}
+
+
+
+$(document).ready(function(){
+    $(window).bind('mousewheel DOMMouseScroll', function(event){
+	    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+	    	scollUp();
+	    }
+	    else {
+	    	scrollDown();
+	    }
+	});
+});
+
+function scollUp() {
+	if($("main").hasClass("zoom") || currentScrollOffset >= 0) {
+		return;
+	}
+    $(".zoomer").css("top", $(".zoomer").position().top + scrollOffset);
+    $(".categories-container").css("top", $(".categories-container").position().top + scrollOffset);
+    currentScrollOffset += scrollOffset;
+    scrollHeadlineFading();
+}
+
+function scrollDown() {
+	if($("main").hasClass("zoom")) {
+		return;
+	}
+    $(".zoomer").css("top", $(".zoomer").position().top - scrollOffset);
+    $(".categories-container").css("top", $(".categories-container").position().top - scrollOffset);
+    currentScrollOffset -= scrollOffset;
+    scrollHeadlineFading();
+}
+
+function scrollHeadlineFading() {
+    if(currentScrollOffset >= -80 && currentScrollOffset <= 0) {
+    	$(".mainTitle").css("opacity", ((currentScrollOffset+80)/80));
+    }
 }
