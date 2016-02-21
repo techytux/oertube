@@ -11,9 +11,9 @@ body
     overflow: hidden;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,808080+50,3a3a3a+100 */
     background: #000000; /* Old browsers */
-    background: fixed -moz-linear-gradient(-45deg, #000000 0%, #808080 50%, #3a3a3a 100%); /* FF3.6-15 */
-    background: fixed -webkit-linear-gradient(-45deg, #000000 0%,#808080 50%,#3a3a3a 100%); /* Chrome10-25,Safari5.1-6 */
-    background: fixed linear-gradient(135deg, #000000 0%,#808080 50%,#3a3a3a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: fixed -moz-linear-gradient(-45deg, #000000 0%, #404040 50%, #1a1a1a 100%); /* FF3.6-15 */
+    background: fixed -webkit-linear-gradient(-45deg, #000000 0%,#404040 50%,#1a1a1a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: fixed linear-gradient(135deg, #000000 0%,#404040 50%,#1a1a1a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     width:1920px;
     height:1080px;
     font-family: 'Ubuntu', sans-serif;
