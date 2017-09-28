@@ -56,7 +56,7 @@ BROADCASTER_TO_LOGO_DICT = {
 }
 
 def get_lists_json():
-    lists_text = urllib.urlopen("http://editorial.mixd.tv/puls-highlights").read()
+    lists_text = urllib.urlopen("http://editorial.mixd.tv/highlights").read()
     lists_json = json.loads(lists_text)
     return lists_json
 
